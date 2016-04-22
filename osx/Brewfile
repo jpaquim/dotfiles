@@ -1,0 +1,53 @@
+### Taps ###
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+tap 'beeftornado/rmtree'
+
+### Brew ###
+# brew 'coreutils'
+# brew 'moreutils'
+# brew 'findutils'
+# brew 'gnu-sed'
+# brew 'bash'
+brew 'zsh'
+brew 'zsh-completions'
+
+brew 'neovim/neovim/neovim'
+brew 'wget'
+brew 'cmake'
+brew 'dejavu2pdf'
+brew 'beeftornado/rmtree/brew-rmtree'
+# brew 'haskell-stack'
+# cask 'haskell-platform'
+
+
+### Cask ###
+cask_args appdir: '/Applications'
+
+cask 'anaconda'
+cask 'iterm2'
+cask 'atom'
+cask 'textmate'
+cask 'github-desktop'
+cask 'evernote'
+cask 'google-chrome'
+cask 'torbrowser'
+cask 'nylas-n1'
+cask 'transmission'
+cask 'vlc'
+cask 'xld'
+cask 'julia'
+
+cask 'appcleaner'
+cask 'dropbox'
+cask 'google-drive'
+cask 'music-manager'
+cask 'the-unarchiver'
+cask 'flux'
+cask 'xquartz'
+
+cask 'boxer'
+cask 'openemu'
+
+# cask 'mactex'
+

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "Cleaning Homebrew packages..."
+brew cleanup
+
+echo "Cleaning conda packages..."
+conda clean --packages --tarballs
+

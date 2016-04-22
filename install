@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+
+# setup gitconfig
+setup_gitconfig () {
+  if ! [ -f git/gitconfig.local.symlink ]; then
+    echo '- Setting up gitconfig...'
+
+    git_credential='cache'
+    if [ "$(uname -s)" == "Darwin" ]
+    then
+      git_credential='osxkeychain'
+    fi
+    user ' - What is your github author name?'
+    read -e git_authorname
+    user ' - What is your github author email?'
+    read -e git_authoremail
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
+  fi
+}
+
+link_file () {
+  local src=$1 dst=$2
+  local overwrite= backup= skip=
+  local action=
+  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
+      local currentSrc="$(readlink $dst)"
+      if [ "$currentSrc" == "$src" ]; then
+        skip=true;
+      else
+        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+        [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+        read -n 1 action
+        case "$action" in
+          o )
+            overwrite=true;;
+          O )
+            overwrite_all=true;;
+          b )
+            backup=true;;
+          B )
+            backup_all=true;;
+          s )
+            skip=true;;
+          S )
+            skip_all=true;;
+          * )
+            ;;
+        esac
+    fi
+    overwrite=${overwrite:-$overwrite_all}
+    backup=${backup:-$backup_all}
+    skip=${skip:-$skip_all}
+    if [ "$overwrite" == "true" ]; then
+      rm -rf "$dst"
+      echo "removed $dst"
+    fi
+
+    if [ "$backup" == "true" ]; then
+      mv "$dst" "${dst}.backup"
+      echo "moved $dst to ${dst}.backup"
+    fi
+
+    if [ "$skip" == "true" ]; then
+      echo "skipped $src"
+    fi
+  fi
+
+  if [ "$skip" != "true" ]; then  # "false" or empty
+    ln -s "$1" "$2"
+    echo "linked $1 to $2"
+  fi
+}
+
+install_dotfiles () {
+  'Installing dotfiles...'
+  local overwrite_all=false backup_all=false skip_all=false
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*'); do
+    dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
+}
+
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
+# Install software, platform specific
+if [ "$(uname -s)" == "Darwin" ]; then # OS X
+    cd osx
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+    cd linux
+fi
+source ./install
+cd ..
+
+if command_exists nvim; then
+    link_file "`pwd`/nvim" "$HOME/.config/nvim"
+else
+    link_file "nvim/nvim.init" "$HOME/.vimrc"
+    link_file "nvim" "$HOME/.vim"
+    rm "$HOME/.vim/nvim.init"
+fi
+# link_file "bashrc" "$HOME/.bashrc"
+# link_file "bash_profile" "$HOME/.bash_profile"
