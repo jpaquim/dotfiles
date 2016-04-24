@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# setup gitconfig
 setup_gitconfig () {
   if ! [ -f git/gitconfig.local.symlink ]; then
     echo '- Setting up gitconfig...'
@@ -10,9 +9,9 @@ setup_gitconfig () {
     then
       git_credential='osxkeychain'
     fi
-    user ' - What is your github author name?'
+    echo ' - What is your github author name?'
     read -e git_authorname
-    user ' - What is your github author email?'
+    echo ' - What is your github author email?'
     read -e git_authoremail
     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
   fi
@@ -81,8 +80,11 @@ install_dotfiles () {
 }
 
 command_exists () {
-    type "$1" &> /dev/null ;
+    type "$1"
+    # &> /dev/null
 }
+
+setup_gitconfig
 
 # Install software, platform specific
 if [ "$(uname -s)" == "Darwin" ]; then # OS X
@@ -94,11 +96,10 @@ source ./install
 cd ..
 
 if command_exists nvim; then
-    link_file "`pwd`/nvim" "$HOME/.config/nvim"
+    mkdir -p "$HOME/.config/nvim"
+    link_file "`pwd`/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 else
-    link_file "nvim/nvim.init" "$HOME/.vimrc"
-    link_file "nvim" "$HOME/.vim"
-    rm "$HOME/.vim/nvim.init"
+    link_file "`pwd`/nvim/init.vim" "$HOME/.vimrc"
 fi
 # link_file "bashrc" "$HOME/.bashrc"
 # link_file "bash_profile" "$HOME/.bash_profile"

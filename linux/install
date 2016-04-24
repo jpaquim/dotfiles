@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-if [ command_exists pacman ]; then # Arch Linux
+if command_exists pacman; then # Arch Linux
     cd arch
-elif [ command_exists emerge ]; then # Gentoo Linux
+elif command_exists emerge; then # Gentoo Linux
     cd gentoo
-elif [ command_exists apt-get ]; then # Ubuntu/Debian
+elif command_exists apt-get; then # Ubuntu
     cd ubuntu
 fi
-source install
+source ./install
 cd ..
 
