@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 setup_gitconfig () {
-  if ! [ -f git/gitconfig.local.symlink ]; then
+  if ! [ -f $HOME/.gitconfig ]; then
     echo '- Setting up gitconfig...'
-
     git_credential='cache'
     if [ "$(uname -s)" == "Darwin" ]
     then
@@ -13,7 +12,8 @@ setup_gitconfig () {
     read -e git_authorname
     echo ' - What is your github author email?'
     read -e git_authoremail
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
+    git config --global user.name $git_authorname
+    git config --global user.email $git_authoremail
   fi
 }
 
@@ -26,7 +26,7 @@ link_file () {
       if [ "$currentSrc" == "$src" ]; then
         skip=true;
       else
-        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+        echo "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
         case "$action" in
@@ -80,8 +80,7 @@ install_dotfiles () {
 }
 
 command_exists () {
-    type "$1"
-    # &> /dev/null
+    type "$1" &> /dev/null
 }
 
 setup_gitconfig
@@ -94,12 +93,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
 fi
 source ./install
 cd ..
+cd vim
+source ./install
+cd ..
 
-if command_exists nvim; then
-    mkdir -p "$HOME/.config/nvim"
-    link_file "`pwd`/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-else
-    link_file "`pwd`/nvim/init.vim" "$HOME/.vimrc"
-fi
 # link_file "bashrc" "$HOME/.bashrc"
 # link_file "bash_profile" "$HOME/.bash_profile"

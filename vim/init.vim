@@ -83,29 +83,29 @@ autocmd BufReadPost *
   \ endif
 
 " Defaults for nvim
-" filetype plugin indent on
-" syntax enable
-" set langnoremap
-" set autoindent
-" set backspace=indent,eol,start
-" set complete-=i
-" set smarttab
-" set nrformats-=octal
-" set incsearch
-" set hlsearch
-" set mouse=a
-" set laststatus=2
-" set wildmenu
-" set display+=lastline
-" set listchars=tab:>\ ,trail:-,nbsp:+
-" set formatoptions+=j
-" setglobal tags-=./tags tags^=./tags;
-" set autoread
-" set history=10000
-" set tabpagemax=50
-" set viminfo^=!
-" set sessionoptions-=options
-" runtime! macros/matchit.vim
-" set background=dark
-" auto-create 'backupdir' if 'backup' is set
+"!filetype plugin indent on
+"!syntax enable
+"!set langnoremap
+"!set autoindent
+"!set backspace=indent,eol,start
+"!set complete-=i
+"!set smarttab
+"!set nrformats-=octal
+"!set incsearch
+"!set hlsearch
+"!set mouse=a
+"!set laststatus=2
+"!set wildmenu
+"!set display+=lastline
+"!set listchars=tab:>\ ,trail:-,nbsp:+
+"!set formatoptions+=j
+"!setglobal tags-=./tags tags^=./tags;
+"!set autoread
+"!set history=10000
+"!set tabpagemax=50
+"!set viminfo^=!
+"!set sessionoptions-=options
+"!runtime! macros/matchit.vim
+"!set background=dark
+"!"auto-create 'backupdir' if 'backup' is set
 
