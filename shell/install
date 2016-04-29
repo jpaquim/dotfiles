@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+link_file "`pwd`/bashrc" "$HOME/.bashrc"
+link_file "`pwd`/bash_profile" "$HOME/.bash_profile"
+link_file "`pwd`/zshrc" "$HOME/.zshrc"
+link_file "`pwd`/zprofile" "$HOME/.zprofile"
+link_file "`pwd`/sh" "$HOME/.sh"

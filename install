@@ -70,15 +70,6 @@ link_file () {
   fi
 }
 
-install_dotfiles () {
-  'Installing dotfiles...'
-  local overwrite_all=false backup_all=false skip_all=false
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*'); do
-    dst="$HOME/.$(basename "${src%.*}")"
-    link_file "$src" "$dst"
-  done
-}
-
 command_exists () {
     type "$1" &> /dev/null
 }
@@ -93,9 +84,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
 fi
 source ./install
 cd ..
-cd vim
-source ./install
-cd ..
 
-# link_file "bashrc" "$HOME/.bashrc"
-# link_file "bash_profile" "$HOME/.bash_profile"
+# Install dotfiles
+for dotdir in shell vim X; do
+    cd $dotdir
+    source ./install
+    cd ..
+done
