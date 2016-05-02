@@ -57,6 +57,6 @@ xterm*|rxvt*)
 esac
 
 # load other dotfiles, aliases, functions, etc.
-for dotfile in .sh/*; do
+for dotfile in $HOME/.sh/*; do
     source $dotfile
 done

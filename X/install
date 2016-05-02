@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
 link_file "`pwd`/Xresources" "$HOME/.Xresources"
+link_file "`pwd`/jwmrc" "$HOME/.jwmrc"

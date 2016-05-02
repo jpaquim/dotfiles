@@ -17,6 +17,6 @@ autoload -Uz colors && colors
 autoload -Uz promptinit && promptinit
 prompt redhat
 
-for dotfile in .sh/*; do
+for dotfile in $HOME/.sh/*; do
     source $dotfile
 done

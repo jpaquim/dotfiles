@@ -86,7 +86,7 @@ source ./install
 cd ..
 
 # Install dotfiles
-for dotdir in shell vim X; do
+for dotdir in shell vim X misc; do
     cd $dotdir
     source ./install
     cd ..
