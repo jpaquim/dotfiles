@@ -59,11 +59,15 @@ nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 
 " switch window with <C-direction>
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-" nnoremap <C-H> <C-w>h
-nnoremap <BS> <C-W>h
+nnoremap <BS> <C-w>h
+" nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" window controls in terminal mode
+tnoremap <C-w> <C-\><C-n><C-w>
+
 " toggle NERDTree with <C-N>
 map <C-N> :NERDTreeToggle<CR>
 " clear search highlighting with //
