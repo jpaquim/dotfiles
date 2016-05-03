@@ -8,5 +8,7 @@ elif command_exists apt-get; then # Ubuntu
     cd ubuntu
 fi
 source ./install
+cd ../X
+source ./install
 cd ..
 

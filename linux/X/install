@@ -3,3 +3,5 @@
 link_file "`pwd`/Xresources" "$HOME/.Xresources"
 link_file "`pwd`/xinitrc" "$HOME/.xinitrc"
 link_file "`pwd`/jwmrc" "$HOME/.jwmrc"
+mkdir -p "$HOME/.config/i3"
+link_file "`pwd`/i3config" "$HOME/.config/i3/config"
