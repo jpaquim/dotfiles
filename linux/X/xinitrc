@@ -27,10 +27,10 @@ fi
 # Set keyboard repeat delay and rate
 xset r rate 200 20
 
-# Swap esc and caps lock
-# setxkbmap -option "caps:swapescape"
+# Keyboard configuration, US and US International
+# Switch using Alt+Space
 # Set caps lock as additional escape
-xmodmap -e 'remove Lock = Caps_Lock' -e 'keysym Caps_Lock = Escape'
+setxkbmap -layout us,us -variant ,intl -option grp:alt_space_toggle -option caps:escape
 
 # Start urxvt daemon
 urxvtd --quiet --opendisplay --fork
