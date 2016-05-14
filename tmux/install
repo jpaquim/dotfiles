@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+link_file "`pwd`/tmux.conf" "$HOME/.tmux.conf"
+if ! [ -d ~/.tmux ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi

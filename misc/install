@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-link_file "`pwd`/tmux.conf" "$HOME/.tmux.conf"

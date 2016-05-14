@@ -3,8 +3,9 @@
 if command_exists nvim; then
     mkdir -p "$HOME/.config/nvim"
     link_file "`pwd`/init.vim" "$HOME/.config/nvim/init.vim"
-else
     link_file "`pwd`/init.vim" "$HOME/.vimrc"
+else
+    cp "`pwd`/init.vim" "$HOME/.vimrc"
     sed -e 's/^"!//' "$HOME/.vimrc"
 fi
 
