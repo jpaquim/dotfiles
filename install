@@ -86,7 +86,7 @@ source ./install
 cd ..
 
 # Install dotfiles
-for dotdir in shell vim tmux; do
+for dotdir in shell tools; do
     cd $dotdir
     source ./install
     cd ..

@@ -8,32 +8,39 @@ endif
 
 """ Plugins """
 call plug#begin()
-Plug 'flazz/vim-colorschemes'          " colorschemes
-Plug 'scrooloose/nerdtree'             " file browser
-Plug 'tpope/vim-fugitive'              " git
-Plug 'scrooloose/syntastic'            " syntax
-Plug 'tpope/vim-surround'              " (), [], {}
-Plug 'ctrlpvim/ctrlp.vim'              " fuzzy find
-Plug 'vim-airline/vim-airline'         " pretty status bar
-Plug 'vim-airline/vim-airline-themes'  " themes for airline
-Plug 'scrooloose/nerdcommenter'        " comments
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-obsession'           " save session
-" Plug 'airblade/vim-gitgutter'          "
-" Plug 'majutsushi/tagbar'               "
+Plug 'ervandew/supertab'        " tab autocompletion
+Plug 'lervag/vimtex'            " latex support
+Plug 'flazz/vim-colorschemes'   " colorschemes
+Plug 'scrooloose/nerdcommenter' " comments
+Plug 'scrooloose/nerdtree'      " file browser
+Plug 'scrooloose/syntastic'     " syntax checking
+Plug 'tpope/vim-rsi'            " readline shortcuts
+Plug 'tpope/vim-surround'       " (), [], {}
+Plug 'vim-airline/vim-airline'  " pretty status bar
+Plug 'vim-airline/vim-airline-themes' " themes for airline
+
+" Plug 'ctrlpvim/ctrlp.vim'       " fuzzy find
+" Plug 'SirVer/ultisnips'         " snippets engine
+" Plug 'honza/vim-snippets'       " snippets collection
+" Plug 'tpope/vim-fugitive'       " git
+" Plug 'tpope/vim-obsession'      " save session
+" Plug 'airblade/vim-gitgutter'   " git diff in gutter
+" Plug 'majutsushi/tagbar'        " ctags sidebar
 call plug#end()
 
 
 """ Appearance """
 set background=dark
 colorscheme solarized
-set number     " show line numbers
-set cursorline " highlight current line
-set ruler      " shows line position
-set showcmd    " shows current command
-set lazyredraw " redraw only when needed
-let &colorcolumn=join(range(81,500),",") " highlight columns after 80
+set number         " show line numbers
+set relativenumber " relative line numbers
+set cursorline     " highlight current line
+set ruler          " shows line position
+set showcmd        " shows current command
+set lazyredraw     " redraw only when needed
 set wrap linebreak nolist " soft wrap
+set colorcolumn=81 " highlight 81st column
+" let &colorcolumn=join(range(81,500),",") " highlight columns after 80
 
 
 """ Tabs """
@@ -55,6 +62,13 @@ inoremap jk <Esc>
 cnoremap jk <Esc>
 " vnoremap jk <Esc>
 
+" navigate visual rather than logical lines, compatible with motions
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+" navigate visual lines with J/K
+" nnoremap J gj
+" nnoremap K gk
+
 " leader from \ to the space bar
 map <Space> <Leader>
 map <Space><Space> <Leader><Leader>
@@ -71,14 +85,30 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 
-" window controls in terminal mode
-tnoremap <C-W> <C-\><C-N><C-W>
+" create tab with <C-t>t, switch tab with <C-t>direction
+nnoremap <C-T>t :tabnew<CR>
+nnoremap <C-T>l :tabn<CR>
+nnoremap <C-T>h :tabp<CR>
+nnoremap <C-T><C-T> :tabnew<CR>
+nnoremap <C-T><C-L> :tabn<CR>
+nnoremap <C-T><C-H> :tabp<CR>
+
+" switch buffer with arrow keys
+map <Left> :bp<CR>
+map <Right> :bn<CR>
+map <Up> :bp<CR>
+map <Down> :bn<CR>
 
 " clear search highlighting with //
 nnoremap // :noh<CR><Esc>
 
 " go to middle of document with gM
 nnoremap gM 50% zz
+
+" extra readline shortcuts
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
+inoremap <C-K> <C-O>d$
 
 " auto-close C-style bracket scopes
 inoremap {<CR> {<CR>}<Esc>ko

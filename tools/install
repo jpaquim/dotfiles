@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+### vim ###
 if command_exists nvim; then
     mkdir -p "$HOME/.config/nvim"
     link_file "`pwd`/init.vim" "$HOME/.config/nvim/init.vim"
@@ -9,3 +10,11 @@ else
     sed -e 's/^"!//' "$HOME/.vimrc"
 fi
 
+### tmux ###
+link_file "`pwd`/tmux.conf" "$HOME/.tmux.conf"
+if ! [ -d ~/.tmux ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+### latex ###
+link_file "`pwd`/latexmkrc" "$HOME/.latexmkrc"
