@@ -51,8 +51,8 @@ redshift &
 export DE="generic"
 
 # Start window manager
-exec i3
+# exec i3
 # exec awesome
-# exec enlightenment_start
+exec enlightenment_start
 # exec jwm
 

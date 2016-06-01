@@ -24,6 +24,7 @@ Plug 'vim-airline/vim-airline-themes' " themes for airline
 " Plug 'honza/vim-snippets'       " snippets collection
 " Plug 'tpope/vim-fugitive'       " git
 " Plug 'tpope/vim-obsession'      " save session
+" Plug 'bkad/CamelCaseMotion'     " CamelCase and underscore word motions
 " Plug 'airblade/vim-gitgutter'   " git diff in gutter
 " Plug 'majutsushi/tagbar'        " ctags sidebar
 call plug#end()
@@ -50,6 +51,12 @@ set shiftwidth=4  " number of spaces in indentation
 set softtabstop=4 " number of spaces in tab when editing
 
 
+""" Search """
+set ignorecase   " ignore case in /? and *# searches
+set smartcase    " except if pattern contains uppercase letters, in /? searches
+set iskeyword-=_ " navigate underscore separated words with w, e, b, etc.
+
+
 """ Splits """
 set splitbelow " new window goes below
 set splitright " new window goes to the right
@@ -60,23 +67,21 @@ set timeoutlen=500 " timeout for key combinations
 " jk in sucession to return to normal mode
 inoremap jk <Esc>
 cnoremap jk <Esc>
-" vnoremap jk <Esc>
+" vnoremap jk <Esc> " makes scrolling slow
 
 " navigate visual rather than logical lines, compatible with motions
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
-" navigate visual lines with J/K
-" nnoremap J gj
-" nnoremap K gk
 
 " leader from \ to the space bar
 map <Space> <Leader>
 map <Space><Space> <Leader><Leader>
 
-" leader+w/q/x to save/quit/save+quit
+" leader+e/w/q/x to edit/save/quit/save+quit
+nnoremap <Leader>e :e 
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>x :x<CR>
 
 " switch window with <C-direction>
 nnoremap <BS> <C-W>h
@@ -99,11 +104,16 @@ map <Right> :bn<CR>
 map <Up> :bp<CR>
 map <Down> :bn<CR>
 
-" clear search highlighting with //
-nnoremap // :noh<CR><Esc>
+" clear search highlighting with Esc
+nnoremap <Esc> :noh<CR>
 
 " go to middle of document with gM
 nnoremap gM 50% zz
+
+" rename variable within scope
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+" rename variable globally
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " extra readline shortcuts
 inoremap <C-P> <Up>
@@ -118,7 +128,11 @@ map <C-N> :NERDTreeToggle<CR>
 
 
 """ Plugins """
-let NERDSpaceDelims=1 " insert a space after comment delimiter
+let g:NERDSpaceDelims = 1 " insert a space after comment delimiter
+let g:NERDCompactSexyComs = 1 " make sexy comments compact
+let g:NERDDefaultAlign = 'left' " align start of line (doesn't work?)
+let g:NERDAltDelims_haskell = 1 " -- instead of {- -}
+let g:NERDAltDelims_c = 1 " // instead of /* */
 let g:airline_powerline_fonts = 1 " enable powerline special characters
 
 

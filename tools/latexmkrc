@@ -1,2 +1,2 @@
 $pdf_mode = 1;
-$pdf_previewer = "start open -a preview %O %S";
+$pdf_previewer = "open -a Skim %O %S";
