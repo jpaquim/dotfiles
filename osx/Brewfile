@@ -12,6 +12,7 @@ tap 'beeftornado/rmtree'
 brew 'zsh'
 brew 'zsh-completions'
 
+brew 'rlwrap'
 brew 'neovim/neovim/neovim'
 brew 'wget'
 brew 'cmake'

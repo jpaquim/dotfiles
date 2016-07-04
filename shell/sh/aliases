@@ -32,3 +32,5 @@ alias killx="killall xinit"
 alias brilow='sudo su -c "echo 20 > /sys/class/backlight/intel_backlight/brightness"'
 alias brimed='sudo su -c "echo 500 > /sys/class/backlight/intel_backlight/brightness"'
 alias brihigh='sudo su -c "echo 1500 > /sys/class/backlight/intel_backlight/brightness"'
+
+alias scheme='rlwrap scheme'

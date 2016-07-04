@@ -16,6 +16,7 @@ Plug 'scrooloose/nerdtree'      " file browser
 Plug 'scrooloose/syntastic'     " syntax checking
 Plug 'tpope/vim-rsi'            " readline shortcuts
 Plug 'tpope/vim-surround'       " (), [], {}
+Plug 'tpope/vim-unimpaired'     " useful shortcuts
 Plug 'vim-airline/vim-airline'  " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
 
@@ -61,6 +62,9 @@ set iskeyword-=_ " navigate underscore separated words with w, e, b, etc.
 set splitbelow " new window goes below
 set splitright " new window goes to the right
 
+""" Indentation """
+set cinoptions+=g0,i0 " access specifiers are left-aligned
+
 
 """ Keyboard Mappings """
 set timeoutlen=500 " timeout for key combinations
@@ -82,6 +86,14 @@ nnoremap <Leader>e :e
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :x<CR>
+nnoremap <Leader>Q :q!<CR>
+nnoremap <Leader>E :e! 
+
+" move lines up and down with J/K
+nnoremap J :m .+1<CR>==
+nnoremap K :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " switch window with <C-direction>
 nnoremap <BS> <C-W>h
