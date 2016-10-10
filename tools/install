@@ -18,3 +18,6 @@ fi
 
 ### latex ###
 link_file "`pwd`/latexmkrc" "$HOME/.latexmkrc"
+
+### clang-format ###
+link_file "`pwd`/clang-format" "$HOME/.clang-format"

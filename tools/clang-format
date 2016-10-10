@@ -1,0 +1,7 @@
+---
+Language:        Cpp
+BasedOnStyle:  LLVM
+AccessModifierOffset: -4
+AlwaysBreakTemplateDeclarations: true
+# SpaceAfterTemplateKeyword: false
+...

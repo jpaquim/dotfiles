@@ -11,6 +11,8 @@ call plug#begin()
 Plug 'ervandew/supertab'        " tab autocompletion
 Plug 'lervag/vimtex'            " latex support
 Plug 'flazz/vim-colorschemes'   " colorschemes
+Plug 'rhysd/vim-clang-format'   " clang format
+Plug 'rust-lang/rust.vim'       " support for Rust
 Plug 'scrooloose/nerdcommenter' " comments
 Plug 'scrooloose/nerdtree'      " file browser
 Plug 'scrooloose/syntastic'     " syntax checking
@@ -55,7 +57,7 @@ set softtabstop=4 " number of spaces in tab when editing
 """ Search """
 set ignorecase   " ignore case in /? and *# searches
 set smartcase    " except if pattern contains uppercase letters, in /? searches
-set iskeyword-=_ " navigate underscore separated words with w, e, b, etc.
+" set iskeyword-=_ " navigate underscore separated words with w, e, b, etc.
 
 
 """ Splits """
@@ -122,10 +124,15 @@ nnoremap <Esc> :noh<CR>
 " go to middle of document with gM
 nnoremap gM 50% zz
 
-" rename variable within scope
+" rename variable globally with confirmation
+" nnoremap gr *N:%s///gc<left><left><left>
+" rename variable globally without confirmation
+" nnoremap gR *N:%s///g<left><left>
+" rename local variables with gr
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-" rename variable globally
+" rename global variables with gR
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
 
 " extra readline shortcuts
 inoremap <C-P> <Up>
@@ -135,17 +142,24 @@ inoremap <C-K> <C-O>d$
 " auto-close C-style bracket scopes
 inoremap {<CR> {<CR>}<Esc>ko
 
+" autoformat with leader cf
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
 " toggle NERDTree with <C-N>
 map <C-N> :NERDTreeToggle<CR>
 
 
 """ Plugins """
+let g:airline_powerline_fonts = 1 " enable powerline special characters
+let g:clang_format#detect_style_file = 1
+
 let g:NERDSpaceDelims = 1 " insert a space after comment delimiter
 let g:NERDCompactSexyComs = 1 " make sexy comments compact
 let g:NERDDefaultAlign = 'left' " align start of line (doesn't work?)
 let g:NERDAltDelims_haskell = 1 " -- instead of {- -}
 let g:NERDAltDelims_c = 1 " // instead of /* */
-let g:airline_powerline_fonts = 1 " enable powerline special characters
+let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
 
 """ Misc """
