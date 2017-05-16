@@ -60,4 +60,3 @@ esac
 for dotfile in $HOME/.sh/*; do
     source $dotfile
 done
-export PATH=$PATH:/usr/local/zed/tools
