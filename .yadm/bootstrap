@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+
+# install tmux package manager
+if ! [ -d ~/.tmux ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
