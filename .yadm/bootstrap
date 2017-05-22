@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# remove README file
+rm ~/README.md
 
 # install tmux package manager
 if ! [ -d ~/.tmux ]; then
