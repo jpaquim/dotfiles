@@ -1,4 +1,4 @@
-" Install plug, for plugin management
+" Install plug for plugin management, if not already present
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -66,8 +66,21 @@ set smartcase    " except if pattern contains uppercase letters, in /? searches
 set splitbelow " new window goes below
 set splitright " new window goes to the right
 
+
 """ Indentation """
 set cinoptions+=g0,i0 " access specifiers are left-aligned
+
+
+""" Misc """
+set undofile " remember undo history across editing sessions
+
+set clipboard=unnamed " copy to macOS clipboard
+
+" return to last edit position when opening files
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
 
 
 """ Keyboard Mappings """
@@ -80,8 +93,10 @@ cnoremap jk <Esc>
 " navigate visual rather than logical lines, compatible with motions
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
+vnoremap <expr> j v:count ? 'j' : 'gj'
+vnoremap <expr> k v:count ? 'k' : 'gk'
 
-" leader from \ to the space bar
+" remap leader from \ to the space bar
 map <Space> <Leader>
 map <Space><Space> <Leader><Leader>
 
@@ -93,6 +108,10 @@ nnoremap <Leader>x :x<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>E :e! 
 
+" leader+,/; to append ,/; to to the end of the line
+nnoremap <Leader>, m`A,<Esc>``
+nnoremap <Leader>; m`A;<Esc>``
+
 " move lines up and down with J/K
 nnoremap J :m .+1<CR>==
 nnoremap K :m .-2<CR>==
@@ -100,13 +119,14 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " switch window with <C-direction>
+" C-H is converted to BS by macOS
 nnoremap <BS> <C-W>h
 " nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 
-" create tab with <C-t>t, switch tab with <C-t>direction
+" create tab with <C-T>t, switch tab with <C-T>direction
 nnoremap <C-T>t :tabnew<CR>
 nnoremap <C-T>l :tabn<CR>
 nnoremap <C-T>h :tabp<CR>
@@ -121,7 +141,7 @@ map <Up> :bp<CR>
 map <Down> :bn<CR>
 
 " clear search highlighting with Esc
-nnoremap <Esc> :noh<CR>
+nnoremap <Esc> :nohlsearch<CR>
 
 " go to middle of document with gM
 nnoremap gM 50% zz
@@ -136,13 +156,10 @@ nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 
-" extra readline shortcuts
+" extra readline-like shortcuts in insert mode
 inoremap <C-P> <Up>
 inoremap <C-N> <Down>
 inoremap <C-K> <C-O>d$
-
-" auto-close C-style bracket scopes
-inoremap {<CR> {<CR>}<Esc>ko
 
 " autoformat with leader cf
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
@@ -154,6 +171,7 @@ map <C-N> :NERDTreeToggle<CR>
 
 """ Plugins """
 let g:airline_powerline_fonts = 1 " enable powerline special characters
+
 let g:clang_format#detect_style_file = 1
 
 let g:NERDSpaceDelims = 1 " insert a space after comment delimiter
@@ -161,17 +179,8 @@ let g:NERDCompactSexyComs = 1 " make sexy comments compact
 let g:NERDDefaultAlign = 'left' " align start of line (doesn't work?)
 let g:NERDAltDelims_haskell = 1 " -- instead of {- -}
 let g:NERDAltDelims_c = 1 " // instead of /* */
+
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
-
-
-""" Misc """
-set clipboard=unnamed " copy to OS X clipboard
-
-" return to last edit position when opening files
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
 
 
 """ Defaults for nvim """
