@@ -12,6 +12,9 @@ Plug 'ervandew/supertab'        " tab autocompletion
 Plug 'flazz/vim-colorschemes'   " colorschemes
 Plug 'jiangmiao/auto-pairs'     " auto close brackets, quotes, etc.
 Plug 'lervag/vimtex'            " latex support
+Plug 'mattn/emmet-vim'          " html super powers
+Plug 'mxw/vim-jsx'              " jsx support
+Plug 'pangloss/vim-javascript'  " javascript support
 Plug 'rhysd/vim-clang-format'   " clang format
 Plug 'rust-lang/rust.vim'       " support for Rust
 Plug 'scrooloose/nerdcommenter' " comments
@@ -25,8 +28,8 @@ Plug 'vim-airline/vim-airline'  " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
 
 " Plug 'ctrlpvim/ctrlp.vim'       " fuzzy find
-" Plug 'SirVer/ultisnips'         " snippets engine
 " Plug 'honza/vim-snippets'       " snippets collection
+" Plug 'SirVer/ultisnips'         " snippets engine
 " Plug 'tpope/vim-fugitive'       " git
 " Plug 'tpope/vim-obsession'      " save session
 " Plug 'bkad/CamelCaseMotion'     " CamelCase and underscore word motions
@@ -119,7 +122,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " switch window with <C-direction>
-" C-H is converted to BS by macOS
+" <C-H> is converted to <BS> by macOS
 nnoremap <BS> <C-W>h
 " nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
@@ -174,6 +177,10 @@ let g:airline_powerline_fonts = 1 " enable powerline special characters
 
 let g:clang_format#detect_style_file = 1
 
+let g:javascript_plugin_jsdoc = 1 " enable jsdoc syntax support
+
+let g:jsx_ext_required = 0 " enable jsx syntax support in js files
+
 let g:NERDSpaceDelims = 1 " insert a space after comment delimiter
 let g:NERDCompactSexyComs = 1 " make sexy comments compact
 let g:NERDDefaultAlign = 'left' " align start of line (doesn't work?)
@@ -181,6 +188,11 @@ let g:NERDAltDelims_haskell = 1 " -- instead of {- -}
 let g:NERDAltDelims_c = 1 " // instead of /* */
 
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
+
+let g:user_emmet_leader_key='<C-M>' " <C-M>, to launch Emmet
+let g:user_emmet_install_global = 0 " enable only for these file types
+autocmd FileType html,css EmmetInstall
+" autocmd FileType html,css,javascript,jsx EmmetInstall
 
 
 """ Defaults for nvim """
