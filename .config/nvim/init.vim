@@ -9,8 +9,9 @@ endif
 """ Plugins """
 call plug#begin()
 Plug 'ervandew/supertab'        " tab autocompletion
-Plug 'lervag/vimtex'            " latex support
 Plug 'flazz/vim-colorschemes'   " colorschemes
+Plug 'jiangmiao/auto-pairs'     " auto close brackets, quotes, etc.
+Plug 'lervag/vimtex'            " latex support
 Plug 'rhysd/vim-clang-format'   " clang format
 Plug 'rust-lang/rust.vim'       " support for Rust
 Plug 'scrooloose/nerdcommenter' " comments
@@ -22,7 +23,6 @@ Plug 'tpope/vim-surround'       " (), [], {}
 Plug 'tpope/vim-unimpaired'     " useful shortcuts
 Plug 'vim-airline/vim-airline'  " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
-Plug 'tmux-plugins/vim-tmux'    " better editing for .tmux.conf
 
 " Plug 'ctrlpvim/ctrlp.vim'       " fuzzy find
 " Plug 'SirVer/ultisnips'         " snippets engine
