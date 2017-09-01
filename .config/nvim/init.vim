@@ -19,22 +19,23 @@ Plug 'rhysd/vim-clang-format'   " clang format
 Plug 'rust-lang/rust.vim'       " support for Rust
 Plug 'scrooloose/nerdcommenter' " comments
 Plug 'scrooloose/nerdtree'      " file browser
-Plug 'scrooloose/syntastic'     " syntax checking
 Plug 'tpope/vim-rsi'            " readline shortcuts
 Plug 'tpope/vim-sleuth'         " set indentation length heuristically
 Plug 'tpope/vim-surround'       " (), [], {}
 Plug 'tpope/vim-unimpaired'     " useful shortcuts
 Plug 'vim-airline/vim-airline'  " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
+Plug 'w0rp/ale'                 " asynchronous lint engine
 
+" Plug 'airblade/vim-gitgutter'   " git diff in gutter
+" Plug 'bkad/CamelCaseMotion'     " CamelCase and underscore word motions
 " Plug 'ctrlpvim/ctrlp.vim'       " fuzzy find
 " Plug 'honza/vim-snippets'       " snippets collection
+" Plug 'majutsushi/tagbar'        " ctags sidebar
+" Plug 'scrooloose/syntastic'     " syntax checking
 " Plug 'SirVer/ultisnips'         " snippets engine
 " Plug 'tpope/vim-fugitive'       " git
 " Plug 'tpope/vim-obsession'      " save session
-" Plug 'bkad/CamelCaseMotion'     " CamelCase and underscore word motions
-" Plug 'airblade/vim-gitgutter'   " git diff in gutter
-" Plug 'majutsushi/tagbar'        " ctags sidebar
 call plug#end()
 
 
@@ -62,6 +63,7 @@ set softtabstop=4 " number of spaces in tab when editing
 """ Search """
 set ignorecase   " ignore case in /? and *# searches
 set smartcase    " except if pattern contains uppercase letters, in /? searches
+set wildignorecase " ignore case in when autocompleting in command mode
 " set iskeyword-=_ " navigate underscore separated words with w, e, b, etc.
 
 
