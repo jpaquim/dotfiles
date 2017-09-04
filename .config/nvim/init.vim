@@ -21,6 +21,7 @@ Plug 'rust-lang/rust.vim'       " support for Rust
 Plug 'scrooloose/nerdcommenter' " comments
 Plug 'mbbill/undotree'          " undo tree visualizer
 Plug 'scrooloose/nerdtree'      " file browser
+Plug 'tpope/vim-fugitive'       " git wrapper
 Plug 'tpope/vim-rsi'            " readline shortcuts
 Plug 'tpope/vim-sleuth'         " set indentation length heuristically
 Plug 'tpope/vim-surround'       " (), [], {}
@@ -37,7 +38,6 @@ Plug 'w0rp/ale'                 " asynchronous lint engine
 " Plug 'scrooloose/syntastic'     " syntax checking
 " Plug 'SirVer/ultisnips'         " snippets engine
 " Plug 'sjl/gundo.vim'            " undo tree visualizer, requires python
-" Plug 'tpope/vim-fugitive'       " git
 " Plug 'tpope/vim-obsession'      " save session
 call plug#end()
 
