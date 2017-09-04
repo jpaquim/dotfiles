@@ -10,6 +10,7 @@ endif
 call plug#begin()
 Plug 'ervandew/supertab'        " tab autocompletion
 Plug 'flazz/vim-colorschemes'   " colorschemes
+Plug 'heavenshell/vim-jsdoc'    " easily add jsdoc comment blocks
 Plug 'jiangmiao/auto-pairs'     " auto close brackets, quotes, etc.
 Plug 'lervag/vimtex'            " latex support
 Plug 'mattn/emmet-vim'          " html super powers
@@ -18,6 +19,7 @@ Plug 'pangloss/vim-javascript'  " javascript support
 Plug 'rhysd/vim-clang-format'   " clang format
 Plug 'rust-lang/rust.vim'       " support for Rust
 Plug 'scrooloose/nerdcommenter' " comments
+Plug 'mbbill/undotree'          " undo tree visualizer
 Plug 'scrooloose/nerdtree'      " file browser
 Plug 'tpope/vim-rsi'            " readline shortcuts
 Plug 'tpope/vim-sleuth'         " set indentation length heuristically
@@ -34,6 +36,7 @@ Plug 'w0rp/ale'                 " asynchronous lint engine
 " Plug 'majutsushi/tagbar'        " ctags sidebar
 " Plug 'scrooloose/syntastic'     " syntax checking
 " Plug 'SirVer/ultisnips'         " snippets engine
+" Plug 'sjl/gundo.vim'            " undo tree visualizer, requires python
 " Plug 'tpope/vim-fugitive'       " git
 " Plug 'tpope/vim-obsession'      " save session
 call plug#end()
