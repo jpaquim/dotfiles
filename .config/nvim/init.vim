@@ -120,19 +120,19 @@ nnoremap <Leader>E :e!
 nnoremap <Leader>, m`A,<Esc>``
 nnoremap <Leader>; m`A;<Esc>``
 
-" move lines up and down with J/K
-nnoremap J :m .+1<CR>==
-nnoremap K :m .-2<CR>==
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+" move lines up and down with <C-J>/<C-K>
+nnoremap <C-J> :m .+1<CR>==
+nnoremap <C-K> :m .-2<CR>==
+vnoremap <C-J> :m '>+1<CR>gv=gv
+vnoremap <C-K> :m '<-2<CR>gv=gv
 
-" switch window with <C-direction>
-" <C-H> is converted to <BS> by macOS
-nnoremap <BS> <C-W>h
-" nnoremap <C-H> <C-W>h
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
+" scroll window and cursor with J/K
+nnoremap J j<C-E>
+nnoremap K k<C-Y>
+
+" keep cursor position when scrolling with <C-F>/<C-B>
+nnoremap <C-F> <C-D><C-D>
+nnoremap <C-B> <C-U><C-U>
 
 " create tab with <C-T>t, switch tab with <C-T>direction
 nnoremap <C-T>t :tabnew<CR>
