@@ -8,37 +8,38 @@ endif
 
 """ Plugins """
 call plug#begin()
-Plug 'ervandew/supertab'        " tab autocompletion
-Plug 'flazz/vim-colorschemes'   " colorschemes
-Plug 'heavenshell/vim-jsdoc'    " easily add jsdoc comment blocks
-Plug 'jiangmiao/auto-pairs'     " auto close brackets, quotes, etc.
-Plug 'lervag/vimtex'            " latex support
-Plug 'mattn/emmet-vim'          " html super powers
-Plug 'mxw/vim-jsx'              " jsx support
-Plug 'pangloss/vim-javascript'  " javascript support
-Plug 'rhysd/vim-clang-format'   " clang format
-Plug 'rust-lang/rust.vim'       " support for Rust
+Plug 'ervandew/supertab' " tab autocompletion
+Plug 'flazz/vim-colorschemes' " colorschemes
+Plug 'heavenshell/vim-jsdoc' " easily add jsdoc comment blocks
+Plug 'jiangmiao/auto-pairs' " auto close brackets, quotes, etc.
+Plug 'leafgarland/typescript-vim' " typescript support
+Plug 'lervag/vimtex' " latex support
+Plug 'mattn/emmet-vim' " html super powers
+Plug 'mbbill/undotree' " undo tree visualizer
+Plug 'mxw/vim-jsx' " jsx support
+Plug 'pangloss/vim-javascript' " javascript support
+Plug 'rhysd/vim-clang-format' " clang format
+Plug 'rust-lang/rust.vim' " rust support
 Plug 'scrooloose/nerdcommenter' " comments
-Plug 'mbbill/undotree'          " undo tree visualizer
-Plug 'scrooloose/nerdtree'      " file browser
-Plug 'tpope/vim-fugitive'       " git wrapper
-Plug 'tpope/vim-rsi'            " readline shortcuts
-Plug 'tpope/vim-sleuth'         " set indentation length heuristically
-Plug 'tpope/vim-surround'       " (), [], {}
-Plug 'tpope/vim-unimpaired'     " useful shortcuts
+Plug 'scrooloose/nerdtree' " file browser
+Plug 'tpope/vim-fugitive' " git wrapper
+Plug 'tpope/vim-rsi' " readline shortcuts
+Plug 'tpope/vim-sleuth' " set indentation length heuristically
+Plug 'tpope/vim-surround' " (), [], {}
+Plug 'tpope/vim-unimpaired' " useful shortcuts
 Plug 'vim-airline/vim-airline'  " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
-Plug 'w0rp/ale'                 " asynchronous lint engine
+Plug 'w0rp/ale' " asynchronous lint engine
 
-" Plug 'airblade/vim-gitgutter'   " git diff in gutter
-" Plug 'bkad/CamelCaseMotion'     " CamelCase and underscore word motions
-" Plug 'ctrlpvim/ctrlp.vim'       " fuzzy find
-" Plug 'honza/vim-snippets'       " snippets collection
-" Plug 'majutsushi/tagbar'        " ctags sidebar
-" Plug 'scrooloose/syntastic'     " syntax checking
-" Plug 'SirVer/ultisnips'         " snippets engine
-" Plug 'sjl/gundo.vim'            " undo tree visualizer, requires python
-" Plug 'tpope/vim-obsession'      " save session
+" Plug 'airblade/vim-gitgutter' " git diff in gutter
+" Plug 'bkad/CamelCaseMotion' " CamelCase and underscore word motions
+" Plug 'ctrlpvim/ctrlp.vim' " fuzzy find
+" Plug 'honza/vim-snippets' " snippets collection
+" Plug 'majutsushi/tagbar' " ctags sidebar
+" Plug 'scrooloose/syntastic' " syntax checking
+" Plug 'SirVer/ultisnips' " snippets engine
+" Plug 'sjl/gundo.vim' " undo tree visualizer, requires python
+" Plug 'tpope/vim-obsession' " save session
 call plug#end()
 
 
