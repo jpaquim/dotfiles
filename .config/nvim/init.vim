@@ -12,14 +12,9 @@ Plug 'ervandew/supertab' " tab autocompletion
 Plug 'flazz/vim-colorschemes' " colorschemes
 Plug 'heavenshell/vim-jsdoc' " easily add jsdoc comment blocks
 Plug 'jiangmiao/auto-pairs' " auto close brackets, quotes, etc.
-Plug 'leafgarland/typescript-vim' " typescript support
-Plug 'lervag/vimtex' " latex support
 Plug 'mattn/emmet-vim' " html super powers
 Plug 'mbbill/undotree' " undo tree visualizer
-Plug 'mxw/vim-jsx' " jsx support
-Plug 'pangloss/vim-javascript' " javascript support
 Plug 'rhysd/vim-clang-format' " clang format
-Plug 'rust-lang/rust.vim' " rust support
 Plug 'scrooloose/nerdcommenter' " comments
 Plug 'scrooloose/nerdtree' " file browser
 Plug 'tpope/vim-fugitive' " git wrapper
@@ -30,6 +25,15 @@ Plug 'tpope/vim-unimpaired' " useful shortcuts
 Plug 'vim-airline/vim-airline'  " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
 Plug 'w0rp/ale' " asynchronous lint engine
+
+Plug 'sheerun/vim-polyglot' " language pack
+Plug 'jparise/vim-graphql' " graphql support
+
+" Plug 'leafgarland/typescript-vim' " typescript support
+" Plug 'lervag/vimtex' " latex support
+" Plug 'mxw/vim-jsx' " jsx support
+" Plug 'pangloss/vim-javascript' " javascript support
+" Plug 'rust-lang/rust.vim' " rust support
 
 " Plug 'airblade/vim-gitgutter' " git diff in gutter
 " Plug 'bkad/CamelCaseMotion' " CamelCase and underscore word motions
