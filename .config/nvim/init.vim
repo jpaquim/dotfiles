@@ -29,12 +29,6 @@ Plug 'w0rp/ale' " asynchronous lint engine
 Plug 'sheerun/vim-polyglot' " language pack
 Plug 'jparise/vim-graphql' " graphql support
 
-" Plug 'leafgarland/typescript-vim' " typescript support
-" Plug 'lervag/vimtex' " latex support
-" Plug 'mxw/vim-jsx' " jsx support
-" Plug 'pangloss/vim-javascript' " javascript support
-" Plug 'rust-lang/rust.vim' " rust support
-
 " Plug 'airblade/vim-gitgutter' " git diff in gutter
 " Plug 'bkad/CamelCaseMotion' " CamelCase and underscore word motions
 " Plug 'ctrlpvim/ctrlp.vim' " fuzzy find
