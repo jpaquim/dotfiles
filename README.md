@@ -1,17 +1,27 @@
 # dotfiles
 
-My dotfiles, managed with [yadm](https://thelocehiliosan.github.io/yadm/)
+My dotfiles, managed with [yadm](https://thelocehiliosan.github.io/yadm/).
 
 # Installation
 
-Download yadm:
+Install yadm with Homebrew:
+```
+brew install yadm
+```
+
+Or manually download it:
 ```
 curl -fLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x /usr/local/bin/yadm
 ```
 
-Clone this repository:
+Use yadm to clone this repository:
 ```
 yadm clone https://github.com/jpaquim/dotfiles
 ```
 
 yadm will then offer to bootstrap the system.
+
+# Initial setup
+nvim: will automatically install its plugins on first launch.
+
+tmux: press `prefix + I` to install plugins.
