@@ -22,6 +22,12 @@ yadm clone https://github.com/jpaquim/dotfiles
 yadm will then offer to bootstrap the system.
 
 # Initial setup
-nvim: will automatically install its plugins on first launch.
+nvim - will automatically install its plugins on first launch.
 
-tmux: press `prefix + I` to install plugins.
+tmux - press `prefix + I` to install plugins.
+
+iTerm2 - run the following to load preferences from the included folder:
+```
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+```
