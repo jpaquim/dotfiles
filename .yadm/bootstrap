@@ -24,17 +24,21 @@ if [ "$system_type" = "Darwin" ]; then
     ln -s /usr/local/bin/{nvim,vim}
   fi
 
+  if [ -f ~/.macos ]; then
+    echo "Setting up macOS defaults"
+    ~/.macos
+  fi
 fi
 
 if command -v vim >/dev/null 2>&1; then
-  echo "Bootstraping vim"
+  echo "Bootstrapping vim"
   vim +PlugUpdate +PlugClean! +PlugUpdate +qall
 fi
 
 if [ ! -d ~/.tmux/plugins ]; then
   echo "Bootstrapping tmux"
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  tmux new 'bash ~/.tmux/plugins/tpm/bin/install_plugins'
+  tmux new '~/.tmux/plugins/tpm/bin/install_plugins'
 fi
 
 echo "Removing README file"
