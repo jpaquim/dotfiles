@@ -31,11 +31,11 @@ if command -v vim >/dev/null 2>&1; then
   vim +PlugUpdate +PlugClean! +PlugUpdate +qall
 fi
 
-if [ ! -d ~/.tmux ]; then
+if [ ! -d ~/.tmux/plugins ]; then
   echo "Bootstrapping tmux"
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  ~/.tmux/plugins/tpm/bin/install_plugins
+  tmux new 'bash ~/.tmux/plugins/tpm/bin/install_plugins'
 fi
 
 echo "Removing README file"
-rm ~/README.md
+rm -f ~/README.md
