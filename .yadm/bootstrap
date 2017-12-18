@@ -1,9 +1,40 @@
 #!/usr/bin/env bash
 
-# remove README file
-rm ~/README.md
+system_type=$(uname -s)
 
-# install tmux package manager
-if ! [ -d ~/.tmux ]; then
+if [ "$system_type" = "Darwin" ]; then
+
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing Homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Installing programs from Homebrew bundle"
+    brew bundle --global
+  fi
+
+  if [ -d "$HOME/.iterm2" ]; then
+    echo "Setting iTerm2 preferences folder"
+    defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+  fi
+
+  if [ ! -f /usr/local/bin/vim ]; then
+    echo "Creating vim -> nvim symbolic link"
+    ln -s /usr/local/bin/{nvim,vim}
+  fi
+
+fi
+
+if command -v vim >/dev/null 2>&1; then
+  echo "Bootstraping Vim"
+  vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
+
+if [ ! -d ~/.tmux ]; then
+    echo "Installing tpm - tmux package manager"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+
+echo "Removing README file"
+rm ~/README.md
