@@ -12,6 +12,7 @@ brew "tmux"
 brew "yadm"
 brew "yarn"
 
+cask "appcleaner"
 cask "atom"
 cask "dash"
 cask "docker"

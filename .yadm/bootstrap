@@ -6,17 +6,17 @@ if [ "$system_type" = "Darwin" ]; then
 
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  if [ -f "$HOME/.Brewfile" ]; then
+  if [ -f ~/.Brewfile ]; then
     echo "Installing programs from Homebrew bundle"
     brew bundle --global
   fi
 
-  if [ -d "$HOME/.iterm2" ]; then
+  if [ -d ~/.iterm2 ]; then
     echo "Setting iTerm2 preferences folder"
-    defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+    defaults write com.googlecode.iterm2 PrefsCustomFolder ~/.iterm2
   fi
 
   if [ ! -f /usr/local/bin/vim ]; then
@@ -27,13 +27,14 @@ if [ "$system_type" = "Darwin" ]; then
 fi
 
 if command -v vim >/dev/null 2>&1; then
-  echo "Bootstraping Vim"
-  vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+  echo "Bootstraping vim"
+  vim +PlugUpdate +PlugClean! +PlugUpdate +qall
 fi
 
 if [ ! -d ~/.tmux ]; then
-    echo "Installing tpm - tmux package manager"
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  echo "Bootstrapping tmux"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
 echo "Removing README file"
