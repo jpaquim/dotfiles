@@ -63,9 +63,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 181 796 473 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1075 80 605 948 0 0 1680 1028 </string>
+	<string>1075 221 605 807 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>212 80 605 947 0 0 1680 1027 </string>
+	<string>212 80 605 948 0 0 1680 1028 </string>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B_selection</key>
@@ -1308,6 +1308,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>534246169.36646402</real>
 	<key>PointerActions</key>
@@ -1358,7 +1360,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-05T11:29:52Z</date>
+	<date>2017-12-18T09:54:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
