@@ -4,17 +4,10 @@ My dotfiles, managed with [yadm](https://thelocehiliosan.github.io/yadm/).
 
 # Installation
 
-Install yadm:
+Download yadm and use it to clone this repository and bootstrap the system:
 ```
-curl -fLO https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod +x yadm
-
+curl -fsSL https://github.com/thelocehiliosan/yadm/raw/master/yadm | bash -s clone https://github.com/jpaquim/dotfiles
 ```
-Use yadm to clone this repository:
-```
-./yadm clone https://github.com/jpaquim/dotfiles
-```
-
-yadm will then offer to bootstrap the system.
 
 # Additional setup
 tmux - press `prefix + I` to install plugins.
