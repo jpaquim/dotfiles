@@ -18,10 +18,6 @@
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents</string>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -58,14 +54,12 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>1169 113 445 223 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 181 796 473 0 0 1680 1028 </string>
+	<string>269 148 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1075 221 605 807 0 0 1680 1028 </string>
+	<string>1075 80 605 947 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>212 80 605 948 0 0 1680 1028 </string>
+	<string>212 80 605 947 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B_selection</key>
@@ -1298,20 +1292,16 @@
 			<string>/Users/jpaquim</string>
 		</dict>
 	</array>
-	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>11544E97-A34F-4CDE-8064-C3665FEF72F2</string>
+	<string>E02156D6-1C93-4C9E-AE88-0A3D763CA0EC</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>534246169.36646402</real>
+	<real>535305145.76105601</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1346,7 +1336,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>~/.iterm2</string>
+	<string>/Users/jpaquim/.iterm2</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -1356,12 +1346,14 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=50</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=85</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-18T09:54:29Z</date>
+	<date>2017-12-18T15:52:44Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>Secure Input</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
