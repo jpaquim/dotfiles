@@ -195,6 +195,11 @@ let g:NERDDefaultAlign = 'left' " align start of line (doesn't work?)
 let g:NERDAltDelims_haskell = 1 " -- instead of {- -}
 let g:NERDAltDelims_c = 1 " // instead of /* */
 
+let g:prettier#config#arrow_parens = 'avoid'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#trailing_comma = 'es5'
+
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
 let g:user_emmet_leader_key='<C-M>' " <C-M>, to launch Emmet
