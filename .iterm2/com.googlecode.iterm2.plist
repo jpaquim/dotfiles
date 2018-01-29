@@ -54,12 +54,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1169 113 445 103 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 109 918 512 0 0 1680 1027 </string>
+	<string>269 252 918 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1075 80 605 947 0 0 1680 1027 </string>
+	<string>990 80 690 947 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1196 126 570 452 0 0 1680 1027 </string>
+	<string>990 80 690 947 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B_selection</key>
@@ -1227,7 +1229,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodeProNerdFontC-Regular 12</string>
+			<string>SauceCodeProNerdFontC-Regular 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1352,7 +1354,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-09T16:02:56Z</date>
+	<date>2018-01-23T17:21:25Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
