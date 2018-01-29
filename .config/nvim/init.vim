@@ -14,6 +14,7 @@ Plug 'heavenshell/vim-jsdoc' " easily add jsdoc comment blocks
 Plug 'jiangmiao/auto-pairs' " auto close brackets, quotes, etc.
 Plug 'mattn/emmet-vim' " html super powers
 Plug 'mbbill/undotree' " undo tree visualizer
+Plug 'prettier/vim-prettier', { 'do': 'yarn' } " formatter for web src files
 Plug 'rhysd/vim-clang-format' " clang format
 Plug 'scrooloose/nerdcommenter' " comments
 Plug 'scrooloose/nerdtree' " file browser
@@ -168,9 +169,12 @@ inoremap <C-P> <Up>
 inoremap <C-N> <Down>
 inoremap <C-K> <C-O>d$
 
-" autoformat with leader cf
+" clang format with leader cf
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
+" prettier format with leader f
+nmap <Leader>f <Plug>(PrettierAsync)
 
 " toggle NERDTree with <C-N>
 map <C-N> :NERDTreeToggle<CR>
