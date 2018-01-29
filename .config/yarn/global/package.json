@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "create-react-app": "^1.5.1",
+    "create-react-native-app": "^1.0.0",
+    "eslint": "^4.16.0",
+    "express-generator": "^4.15.5",
+    "graphql-cli": "^2.12.5",
+    "http-server": "^0.11.1",
+    "jscodeshift": "^0.4.0",
+    "prisma": "^1.0.11",
+    "serve": "^6.4.9",
+    "vue-cli": "^2.9.2"
+  }
+}
