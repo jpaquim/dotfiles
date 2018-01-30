@@ -2424,8 +2424,8 @@ global-prefix@^1.0.1:
     which "^1.2.14"
 
 globals@^11.0.1:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-11.2.0.tgz#aa2ece052a787563ba70a3dcd9dc2eb8a9a0488c"
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.3.0.tgz#e04fdb7b9796d8adac9c8f64c14837b2313378b0"
 
 globals@^9.18.0:
   version "9.18.0"
@@ -2671,7 +2671,7 @@ graphql-config@1.1.7:
     js-yaml "^3.10.0"
     minimatch "^3.0.4"
 
-graphql-config@1.2.0, graphql-config@^1.0.0, graphql-config@^1.1.4, graphql-config@^1.1.7, graphql-config@^1.2.0:
+graphql-config@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/graphql-config/-/graphql-config-1.2.0.tgz#c1396e7705ce82870923134426d1b19b2de6c326"
   dependencies:
@@ -2681,6 +2681,17 @@ graphql-config@1.2.0, graphql-config@^1.0.0, graphql-config@^1.1.4, graphql-conf
     js-yaml "^3.10.0"
     minimatch "^3.0.4"
 
+graphql-config@^1.0.0, graphql-config@^1.1.4, graphql-config@^1.1.7, graphql-config@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/graphql-config/-/graphql-config-1.2.1.tgz#97b4403707db408feb335fbc159651f2a36cb558"
+  dependencies:
+    graphql "^0.12.3"
+    graphql-import "^0.4.0"
+    graphql-request "^1.4.0"
+    js-yaml "^3.10.0"
+    lodash "^4.17.4"
+    minimatch "^3.0.4"
+
 graphql-import@0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/graphql-import/-/graphql-import-0.4.0.tgz#84c1b2dfde1c9af26525bd87a6d2f84a63853501"
@@ -2688,9 +2699,16 @@ graphql-import@0.4.0:
     graphql "^0.12.3"
     lodash "^4.17.4"
 
-graphql-import@0.4.1, graphql-import@^0.4.0:
+graphql-import@0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/graphql-import/-/graphql-import-0.4.1.tgz#ef1c047d6250bc8c009b12b64c26924ac4f4716c"
+  dependencies:
+    graphql "^0.12.3"
+    lodash "^4.17.4"
+
+graphql-import@^0.4.0:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/graphql-import/-/graphql-import-0.4.2.tgz#e4925e838cf41d69d81d3879788ef8ee77532977"
   dependencies:
     graphql "^0.12.3"
     lodash "^4.17.4"
@@ -5796,8 +5814,8 @@ validator@^8.2.0:
   resolved "https://registry.yarnpkg.com/validator/-/validator-8.2.0.tgz#3c1237290e37092355344fef78c231249dab77b9"
 
 validator@^9.0.0:
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-9.3.0.tgz#9fbe89a73848560b87377561776766d565e2ee54"
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-9.4.0.tgz#c503ef88f7e6b8fb7688599267b309482d81ae60"
 
 vary@~1.1.2:
   version "1.1.2"
