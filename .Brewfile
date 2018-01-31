@@ -5,6 +5,7 @@ tap "caskroom/fonts"
 tap "caskroom/versions"
 
 brew "awscli"
+brew "aws-elasticbeanstalk"
 brew "azure-cli"
 brew "cloudfoundry/tap/cf-cli"
 brew "fd"
