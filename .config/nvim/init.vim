@@ -8,7 +8,8 @@ endif
 
 """ Plugins """
 call plug#begin()
-Plug 'ervandew/supertab' " tab autocompletion
+Plug 'airblade/vim-gitgutter' " git diff in gutter
+Plug 'chaoren/vim-wordmotion' " CamelCase, - and _ word motions
 Plug 'flazz/vim-colorschemes' " colorschemes
 Plug 'heavenshell/vim-jsdoc' " easily add jsdoc comment blocks
 Plug 'jiangmiao/auto-pairs' " auto close brackets, quotes, etc.
@@ -29,15 +30,15 @@ Plug 'w0rp/ale' " asynchronous lint engine
 
 Plug 'sheerun/vim-polyglot' " language pack
 Plug 'jparise/vim-graphql' " graphql support
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
+Plug 'autozimu/languageclient-neovim',
+  \ { 'branch': 'next', 'do': 'bash install.sh' } " support for language servers
+Plug 'mhartington/nvim-typescript' " typescript support
 
-" Plug 'airblade/vim-gitgutter' " git diff in gutter
-" Plug 'bkad/CamelCaseMotion' " CamelCase and underscore word motions
 " Plug 'ctrlpvim/ctrlp.vim' " fuzzy find
 " Plug 'honza/vim-snippets' " snippets collection
 " Plug 'majutsushi/tagbar' " ctags sidebar
-" Plug 'scrooloose/syntastic' " syntax checking
 " Plug 'SirVer/ultisnips' " snippets engine
-" Plug 'sjl/gundo.vim' " undo tree visualizer, requires python
 " Plug 'tpope/vim-obsession' " save session
 call plug#end()
 
@@ -58,16 +59,15 @@ set colorcolumn=81 " highlight 81st column
 
 """ Tabs """
 set expandtab     " replace tab with spaces
-set tabstop=4     " number of visual spaces per TAB
-set shiftwidth=4  " number of spaces in indentation
-set softtabstop=4 " number of spaces in tab when editing
+set tabstop=4     " number of visual spaces per TAB character
+set shiftwidth=2  " number of spaces in indentation
+set softtabstop=2 " number of spaces in tab when editing
 
 
 """ Search """
 set ignorecase   " ignore case in /? and *# searches
 set smartcase    " except if pattern contains uppercase letters, in /? searches
 set wildignorecase " ignore case in when autocompleting in command mode
-" set iskeyword-=_ " navigate underscore separated words with w, e, b, etc.
 
 
 """ Splits """
@@ -84,6 +84,8 @@ set undofile " remember undo history across editing sessions
 
 set clipboard=unnamed " copy to macOS clipboard
 
+set timeoutlen=500 " timeout for key combinations
+
 " return to last edit position when opening files
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -92,7 +94,7 @@ autocmd BufReadPost *
 
 
 """ Keyboard Mappings """
-set timeoutlen=500 " timeout for key combinations
+
 " jk in sucession to return to normal mode
 inoremap jk <Esc>
 cnoremap jk <Esc>
@@ -104,11 +106,11 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 vnoremap <expr> j v:count ? 'j' : 'gj'
 vnoremap <expr> k v:count ? 'k' : 'gk'
 
-" remap leader from \ to the space bar
+" remap leader to the space bar
 map <Space> <Leader>
 map <Space><Space> <Leader><Leader>
 
-" leader+e/w/q/x to edit/save/quit/save+quit
+" edit, save, quit, and save & quit
 nnoremap <Leader>e :e 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
@@ -116,25 +118,24 @@ nnoremap <Leader>x :x<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>E :e! 
 
-" leader+,/; to append ,/; to to the end of the line
+" append , and ; to to the end of the line
 nnoremap <Leader>, m`A,<Esc>``
 nnoremap <Leader>; m`A;<Esc>``
 
-" move lines up and down with <C-J>/<C-K>
+" move lines up and down
 nnoremap <C-J> :m .+1<CR>==
 nnoremap <C-K> :m .-2<CR>==
 vnoremap <C-J> :m '>+1<CR>gv=gv
 vnoremap <C-K> :m '<-2<CR>gv=gv
 
-" scroll window and cursor with J/K
+" scroll with fixed cursor position
 nnoremap J j<C-E>
 nnoremap K k<C-Y>
 
-" keep cursor position when scrolling with <C-F>/<C-B>
 nnoremap <C-F> <C-D><C-D>
 nnoremap <C-B> <C-U><C-U>
 
-" create tab with <C-T>t, switch tab with <C-T>direction
+" create tab, switch tab
 nnoremap <C-T>t :tabnew<CR>
 nnoremap <C-T>l :tabn<CR>
 nnoremap <C-T>h :tabp<CR>
@@ -148,30 +149,32 @@ map <Right> :bn<CR>
 map <Up> :bp<CR>
 map <Down> :bn<CR>
 
-" clear search highlighting with Esc
-nnoremap <Esc> :nohlsearch<CR>
+" clear search highlighting
+nnoremap <silent><Esc> :nohlsearch<CR>
 
-" go to middle of document with gM
+" go to middle of document
 nnoremap gM 50% zz
 
-" rename variable globally with confirmation
-" nnoremap gr *N:%s///gc<left><left><left>
-" rename variable globally without confirmation
-" nnoremap gR *N:%s///g<left><left>
-" rename local variables with gr
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-" rename global variables with gR
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
-
+" global find and replace
+nnoremap <Leader>R *N:%s/<C-R>///gc<Left><Left><Left>
 
 " extra readline-like shortcuts in insert mode
 inoremap <C-P> <Up>
 inoremap <C-N> <Down>
 inoremap <C-K> <C-O>d$
 
+" source and edit vim configuration file
+nnoremap <Leader>v :so $MYVIMRC<CR>
+nnoremap <Leader>V :e $MYVIMRC<CR>
+
 " clang format with leader cf
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
+" show symbol documentation, go to definition, and rename in scope
+nnoremap <silent><Leader>h :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent><Leader>d :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent><Leader>r :call LanguageClient_textDocument_rename()<CR><Paste>
 
 " prettier format with leader f
 nmap <Leader>f <Plug>(PrettierAsync)
@@ -183,11 +186,19 @@ map <C-N> :NERDTreeToggle<CR>
 """ Plugins """
 let g:airline_powerline_fonts = 1 " enable powerline special characters
 
-let g:clang_format#detect_style_file = 1
+let g:clang_format#detect_style_file = 1 " detect config in .clang-format
+
+let g:deoplete#enable_at_startup = 1 " enable autocomplete
 
 let g:javascript_plugin_jsdoc = 1 " enable jsdoc syntax support
 
 let g:jsx_ext_required = 0 " enable jsx syntax support in js files
+
+let g:LanguageClient_serverCommands = {
+  \ 'javascript': ['javascript-typescript-stdio'],
+  \ 'javascript.jsx': ['javascript-typescript-stdio'],
+  \ 'typescript': ['javascript-typescript-stdio']
+  \ }
 
 let g:NERDSpaceDelims = 1 " insert a space after comment delimiter
 let g:NERDCompactSexyComs = 1 " make sexy comments compact
@@ -195,6 +206,7 @@ let g:NERDDefaultAlign = 'left' " align start of line (doesn't work?)
 let g:NERDAltDelims_haskell = 1 " -- instead of {- -}
 let g:NERDAltDelims_c = 1 " // instead of /* */
 
+let g:prettier#quickfix_enabled = 0
 let g:prettier#config#arrow_parens = 'avoid'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
