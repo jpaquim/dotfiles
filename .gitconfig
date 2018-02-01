@@ -1,3 +1,5 @@
 [user]
 	email = joaopaquim@gmail.com
 	name = jpaquim
+[core]
+	editor = vim
