@@ -24,7 +24,7 @@ Plug 'tpope/vim-rsi' " readline shortcuts
 Plug 'tpope/vim-sleuth' " set indentation length heuristically
 Plug 'tpope/vim-surround' " (), [], {}
 Plug 'tpope/vim-unimpaired' " useful shortcuts
-Plug 'vim-airline/vim-airline'  " pretty status bar
+Plug 'vim-airline/vim-airline' " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
 Plug 'w0rp/ale' " asynchronous lint engine
 
@@ -47,27 +47,27 @@ call plug#end()
 """ Appearance """
 set background=dark
 colorscheme solarized
-set number         " show line numbers
+set number " show line numbers
 set relativenumber " relative line numbers
-set cursorline     " highlight current line
-set ruler          " shows line position
-set showcmd        " shows current command
-set lazyredraw     " redraw only when needed
+set cursorline " highlight current line
+set ruler " shows line position
+set showcmd " shows current command
+set lazyredraw " redraw only when needed
 set wrap linebreak nolist " soft wrap
 set colorcolumn=81 " highlight 81st column
 " let &colorcolumn=join(range(81,500),",") " highlight columns after 80
 
 
 """ Tabs """
-set expandtab     " replace tab with spaces
-set tabstop=4     " number of visual spaces per TAB character
-set shiftwidth=2  " number of spaces in indentation
+set expandtab " replace tab with spaces
+set tabstop=4 " number of visual spaces per TAB character
+set shiftwidth=2 " number of spaces in indentation
 set softtabstop=2 " number of spaces in tab when editing
 
 
 """ Search """
-set ignorecase   " ignore case in /? and *# searches
-set smartcase    " except if pattern contains uppercase letters, in /? searches
+set ignorecase " ignore case in /? and *# searches
+set smartcase " except if pattern contains uppercase letters, in /? searches
 set wildignorecase " ignore case in when autocompleting in command mode
 
 
@@ -188,6 +188,8 @@ map <C-N> :NERDTreeToggle<CR>
 
 """ Plugins """
 let g:airline_powerline_fonts = 1 " enable powerline special characters
+
+let g:ale_sign_column_always = 1 " keep gutter always open
 
 let g:clang_format#detect_style_file = 1 " detect config in .clang-format
 
