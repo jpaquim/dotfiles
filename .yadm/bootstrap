@@ -22,6 +22,8 @@ if [ "$system_type" = "Darwin" ]; then
   if [ ! -f /usr/local/bin/vim ]; then
     echo "Creating vim -> nvim symbolic link"
     ln -s /usr/local/bin/{nvim,vim}
+    echo "Installing python 3 support for neovim"
+    pip3 install neovim
   fi
 
   if [ -f ~/.macos ]; then
