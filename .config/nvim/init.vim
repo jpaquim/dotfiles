@@ -135,6 +135,10 @@ vnoremap <C-K> :m '<-2<CR>gv=gv
 nnoremap J j<C-E>
 nnoremap K k<C-Y>
 
+" join and split lines
+nnoremap m J
+nnoremap M m`r<CR>``
+
 nnoremap <C-F> <C-D><C-D>
 nnoremap <C-B> <C-U><C-U>
 
