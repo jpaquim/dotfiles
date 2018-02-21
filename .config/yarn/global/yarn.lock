@@ -1925,9 +1925,9 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.18.0:
-  version "4.18.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.18.0.tgz#ebd0ba795af6dc59aa5cee17938160af5950e051"
+eslint@^4.18.1:
+  version "4.18.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.18.1.tgz#b9138440cb1e98b2f44a0d578c6ecf8eae6150b0"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -3173,8 +3173,8 @@ inquirer@^3.0.6, inquirer@^3.3.0:
     through "^2.3.6"
 
 invariant@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.3.tgz#1a827dfde7dcbd7c323f0ca826be8fa7c5e9d688"
   dependencies:
     loose-envify "^1.0.0"
 
@@ -3190,9 +3190,9 @@ ip@1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
 
-ipaddr.js@1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.5.2.tgz#d4b505bde9946987ccf0fc58d9010ff9607e3fa0"
+ipaddr.js@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
 
 is-array-buffer-x@^1.0.13:
   version "1.7.0"
@@ -3494,8 +3494,8 @@ iterall@1.1.3:
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
 
 iterall@^1.1.0, iterall@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.0.tgz#434e9f41f0b99911ab9c3d49d95f0e079176a2a2"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.1.tgz#59a347ae8001d2d4bc546b8487ca755d61849965"
 
 iterare@^0.0.8:
   version "0.0.8"
@@ -3553,9 +3553,9 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscodeshift@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/jscodeshift/-/jscodeshift-0.4.0.tgz#a76afdbfc6f4e78c3fd0d1a60470dfa43c03190e"
+jscodeshift@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/jscodeshift/-/jscodeshift-0.4.1.tgz#da91a1c2eccfa03a3387a21d39948e251ced444a"
   dependencies:
     async "^1.5.0"
     babel-plugin-transform-flow-strip-types "^6.8.0"
@@ -3922,8 +3922,8 @@ marked-terminal@^2.0.0:
     node-emoji "^1.4.1"
 
 marked@^0.3.6:
-  version "0.3.15"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.15.tgz#de96982e54c880962f5093a2fa93d0866bf73668"
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.16.tgz#2f188b7dfcfa6540fe9940adaf0f3b791c9a5cba"
 
 math-clamp-x@^1.2.0:
   version "1.2.0"
@@ -3953,8 +3953,8 @@ mem@^1.1.0:
     mimic-fn "^1.0.0"
 
 memfs@^2.5.3:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/memfs/-/memfs-2.7.1.tgz#eaa0f5fb9682688ad1ab21e747eace0b441d9bc1"
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/memfs/-/memfs-2.8.0.tgz#a64887d6b540084be5847eb1bd3b5ac8f759c114"
   dependencies:
     fast-extend "0.0.2"
     fs-monkey "^0.3.0"
@@ -4631,9 +4631,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prisma-cli-core@1.0.15:
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/prisma-cli-core/-/prisma-cli-core-1.0.15.tgz#133107c8ac6ecf07c1a8dbdb7e2a2c4c3c092715"
+prisma-cli-core@1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/prisma-cli-core/-/prisma-cli-core-1.0.16.tgz#c12a14ccfa02cb3d14557bf85e61a15834842951"
   dependencies:
     adm-zip "^0.4.7"
     archiver "^2.0.3"
@@ -4664,7 +4664,7 @@ prisma-cli-core@1.0.15:
     pause "^0.1.0"
     portfinder "^1.0.13"
     prisma-json-schema "^0.0.1"
-    prisma-yml "1.0.24"
+    prisma-yml "1.0.25"
     scuid "^1.0.2"
     semver "^5.4.1"
     sillyname "^0.1.0"
@@ -4673,9 +4673,9 @@ prisma-cli-core@1.0.15:
     util.promisify "^1.0.0"
     validator "^8.2.0"
 
-prisma-cli-engine@1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/prisma-cli-engine/-/prisma-cli-engine-1.0.13.tgz#4c0ee70d554a07a2727a57a86a056d3e534d0da7"
+prisma-cli-engine@1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/prisma-cli-engine/-/prisma-cli-engine-1.0.14.tgz#4189762a8b7e91a512685ddcdaa2c2ae6b2c7de2"
   dependencies:
     "@heroku/linewrap" "^1.0.0"
     ajv "5"
@@ -4717,7 +4717,7 @@ prisma-cli-engine@1.0.13:
     memfs "^2.5.3"
     opn "^5.1.0"
     prisma-json-schema "^0.0.1"
-    prisma-yml "1.0.24"
+    prisma-yml "1.0.25"
     raven "2.3.0"
     replaceall "^0.1.6"
     rwlockfile "^1.4.8"
@@ -4777,9 +4777,9 @@ prisma-yml@1.0.21:
     scuid "^1.0.2"
     yaml-ast-parser "^0.0.40"
 
-prisma-yml@1.0.24:
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/prisma-yml/-/prisma-yml-1.0.24.tgz#ba8fa6d4b36b4b85090a72ed2c0fb8d670b578f0"
+prisma-yml@1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/prisma-yml/-/prisma-yml-1.0.25.tgz#e7989efa85320d7f7695d2280ba305abe5262f75"
   dependencies:
     ajv "5"
     bluebird "^3.5.1"
@@ -4797,13 +4797,13 @@ prisma-yml@1.0.24:
     scuid "^1.0.2"
     yaml-ast-parser "^0.0.40"
 
-prisma@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-1.2.4.tgz#a3d8b28286fa40858c48b9c41bc57b4cd50966ac"
+prisma@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-1.2.5.tgz#0143307c676328716660397f44046e6b1be20938"
   dependencies:
     fs-extra "^5.0.0"
-    prisma-cli-core "1.0.15"
-    prisma-cli-engine "1.0.13"
+    prisma-cli-core "1.0.16"
+    prisma-cli-engine "1.0.14"
     semver "^5.4.1"
     source-map-support "^0.4.18"
 
@@ -4835,11 +4835,11 @@ protochain@^1.0.5:
   resolved "https://registry.yarnpkg.com/protochain/-/protochain-1.0.5.tgz#991c407e99de264aadf8f81504b5e7faf7bfa260"
 
 proxy-addr@~2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.2.tgz#6571504f47bb988ec8180253f85dd7e14952bdec"
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.3.tgz#355f262505a621646b3130a728eb647e22055341"
   dependencies:
     forwarded "~0.1.2"
-    ipaddr.js "1.5.2"
+    ipaddr.js "1.6.0"
 
 prr@~1.0.1:
   version "1.0.1"
@@ -5306,9 +5306,9 @@ serve-static@1.13.1:
     parseurl "~1.3.2"
     send "0.16.1"
 
-serve@^6.4.10:
-  version "6.4.10"
-  resolved "https://registry.yarnpkg.com/serve/-/serve-6.4.10.tgz#e6ee70820da66dd877fc66ba0f8d90502a95508b"
+serve@^6.4.11:
+  version "6.4.11"
+  resolved "https://registry.yarnpkg.com/serve/-/serve-6.4.11.tgz#53ad2cae2cdd164dba5602616dc82f5c9abab211"
   dependencies:
     "@zeit/check-updates" "1.0.5"
     args "3.0.8"
