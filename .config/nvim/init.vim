@@ -9,6 +9,7 @@ endif
 """ Plugins """
 call plug#begin()
 Plug 'airblade/vim-gitgutter' " git diff in gutter
+Plug 'alvan/vim-closetag' " auto close HTML tags
 Plug 'chaoren/vim-wordmotion' " CamelCase, - and _ word motions
 Plug 'flazz/vim-colorschemes' " colorschemes
 Plug 'heavenshell/vim-jsdoc' " easily add jsdoc comment blocks
@@ -196,6 +197,9 @@ let g:airline_powerline_fonts = 1 " enable powerline special characters
 let g:ale_sign_column_always = 1 " keep gutter always open
 
 let g:clang_format#detect_style_file = 1 " detect config in .clang-format
+
+let g:closetag_filenames = '*.html,*.js,*.jsx'
+let g:closetag_xhtml_filenames = '*.js,*.jsx'
 
 let g:deoplete#enable_at_startup = 1 " enable autocomplete
 
