@@ -2,15 +2,15 @@
   "dependencies": {
     "create-react-app": "^1.5.2",
     "create-react-native-app": "^1.0.0",
-    "eslint": "^4.18.1",
-    "express-generator": "^4.15.5",
-    "graphql-cli": "^2.15.7",
+    "eslint": "^4.19.1",
+    "express-generator": "^4.16.0",
+    "graphql-cli": "^2.15.8",
     "http-server": "^0.11.1",
-    "javascript-typescript-langserver": "^2.7.1",
-    "jscodeshift": "^0.4.1",
-    "prisma": "^1.2.8",
-    "serve": "^6.5.0",
-    "typescript": "^2.7.2",
+    "javascript-typescript-langserver": "^2.8.0",
+    "jscodeshift": "^0.5.0",
+    "prisma": "^1.5.1",
+    "serve": "^6.5.3",
+    "typescript": "^2.8.1",
     "vue-cli": "^2.9.3"
   }
 }
