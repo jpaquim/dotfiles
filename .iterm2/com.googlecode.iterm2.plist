@@ -164,12 +164,16 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1169 113 445 103 0 0 1680 1027 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 496 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>56 303 796 473 0 0 1680 1027 </string>
+	<string>56 264 918 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>990 80 690 947 0 0 1680 1027 </string>
+	<string>974 80 706 947 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>990 80 690 947 0 0 1680 1027 </string>
+	<string>1871 1165 706 1302 -863 1050 3440 1417 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>1871 1420 706 1047 -863 1050 3440 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_28B8E30A-CE4C-4D0E-89DB-566D6EDB043B_selection</key>
@@ -1429,6 +1433,8 @@
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1438,14 +1444,16 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-01T08:52:40Z</date>
+	<date>2018-06-15T09:55:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 </dict>
 </plist>
