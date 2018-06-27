@@ -3,3 +3,5 @@
 	name = jpaquim
 [core]
 	editor = vim
+[push]
+	default = current
