@@ -1,18 +1,17 @@
 {
   "dependencies": {
     "@vue/cli": "^3.0.0-rc.3",
-    "@warriorjs/cli": "^0.6.0",
     "create-proton-app": "^1.1.6",
     "create-react-app": "^1.5.2",
     "create-react-native-app": "^1.0.0",
-    "eslint": "^5.0.1",
+    "eslint": "^5.1.0",
     "express-generator": "^4.16.0",
     "http-server": "^0.11.1",
     "javascript-typescript-langserver": "^2.10.0",
     "jscodeshift": "^0.5.1",
-    "netlify-cli": "^1.2.2",
-    "prisma": "^1.10.2",
-    "serve": "^9.1.0",
+    "netlify-cli": "^1.2.3",
+    "prisma": "^1.11.1",
+    "serve": "^9.2.0",
     "typescript": "^2.9.2"
   }
 }
