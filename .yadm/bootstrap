@@ -26,10 +26,10 @@ if [ "$system_type" = "Darwin" ]; then
     pip3 install neovim
   fi
 
-  if [ -f ~/.macos ]; then
-    echo "Setting up macOS defaults"
-    ~/.macos
-  fi
+#   if [ -f ~/.macos ]; then
+#     echo "Setting up macOS defaults"
+#     ~/.macos
+#   fi
 fi
 
 if command -v vim >/dev/null 2>&1; then
