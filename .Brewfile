@@ -23,6 +23,7 @@ brew "rust"
 brew "telnet"
 brew "tmux"
 brew "watchman"
+brew "wget"
 brew "yadm"
 brew "yarn"
 
