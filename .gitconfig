@@ -5,3 +5,16 @@
 	editor = vim
 [push]
 	default = current
+[alias]
+	ci = commit
+	co = checkout
+	cob = checkout -b
+	pullr = pull --rebase origin master
+	pushf = push --force-with-lease
+	rb = rebase
+	rbi = rebase -i
+	rbc = rebase --continue
+	rba = rebase --abort
+	st = status
+[gpg]
+	program = /usr/local/bin/gpg
