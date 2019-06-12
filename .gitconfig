@@ -6,6 +6,9 @@
 [push]
 	default = current
 [alias]
+	br = branch
+	brd = branch -d
+	brD = branch -D
 	ci = commit
 	co = checkout
 	cob = checkout -b
