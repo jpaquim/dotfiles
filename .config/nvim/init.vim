@@ -2,7 +2,7 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 
@@ -29,12 +29,15 @@ Plug 'vim-airline/vim-airline' " pretty status bar
 Plug 'vim-airline/vim-airline-themes' " themes for airline
 Plug 'w0rp/ale' " asynchronous lint engine
 
-Plug 'sheerun/vim-polyglot' " language pack
-Plug 'jparise/vim-graphql' " graphql support
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
 Plug 'autozimu/languageclient-neovim',
   \ { 'branch': 'next', 'do': 'bash install.sh' } " support for language servers
-Plug 'mhartington/nvim-typescript' " typescript support
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
+Plug 'sheerun/vim-polyglot' " language pack
+" Note: before adding a language plugin, check if vim-polyglot doesn't already
+" include support for it
+Plug 'mhinz/vim-mix-format' " Elixir formatter support
+Plug 'jparise/vim-graphql' " graphql support
+Plug 'mhartington/nvim-typescript' " TypeScript support
 
 " Plug 'ctrlpvim/ctrlp.vim' " fuzzy find
 " Plug 'honza/vim-snippets' " snippets collection
@@ -213,6 +216,8 @@ let g:LanguageClient_serverCommands = {
   \ 'typescript': ['javascript-typescript-stdio']
   \ }
 
+let g:mix_format_on_save = 1 " format on save when editing Elixir
+
 let g:NERDSpaceDelims = 1 " insert a space after comment delimiter
 let g:NERDCompactSexyComs = 1 " make sexy comments compact
 let g:NERDDefaultAlign = 'left' " align start of line (doesn't work?)
@@ -223,6 +228,8 @@ let g:prettier#quickfix_enabled = 0
 let g:prettier#config#arrow_parens = 'avoid'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
+
+let g:rustfmt_autosave = 1 " format on save when editing Rust
 
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
