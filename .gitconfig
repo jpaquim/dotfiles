@@ -21,3 +21,5 @@
 	st = status
 [gpg]
 	program = /usr/local/bin/gpg
+[hub]
+	protocol = https
