@@ -6,19 +6,26 @@
 [push]
 	default = current
 [alias]
+	amend = commit --amend
 	br = branch
 	brd = branch -d
 	brD = branch -D
 	ci = commit
+	cia = commit -avv
+	civ = commit -vv
 	co = checkout
 	cob = checkout -b
 	pullr = pull --rebase origin master
+	pushbr = push --no-verify -u
 	pushf = push --force-with-lease
+	pushfn = push --force-with-lease --no-verify
+	pushn = push --no-verify
 	rb = rebase
 	rbi = rebase -i
 	rbc = rebase --continue
 	rba = rebase --abort
 	st = status
+	temp = commit -m temp
 [gpg]
 	program = /usr/local/bin/gpg
 [hub]
