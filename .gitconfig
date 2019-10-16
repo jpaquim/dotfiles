@@ -14,11 +14,13 @@
 	cob = checkout -b
 	pullr = pull --rebase origin master
 	pushf = push --force-with-lease
+	pushfn = push --force-with-lease --no-verify
 	rb = rebase
 	rbi = rebase -i
 	rbc = rebase --continue
 	rba = rebase --abort
 	st = status
+	temp = commit -m temp
 [gpg]
 	program = /usr/local/bin/gpg
 [hub]
