@@ -197,6 +197,11 @@ map <C-N> :NERDTreeToggle<CR>
 """ Plugins """
 let g:airline_powerline_fonts = 1 " enable powerline special characters
 
+let g:ale_fix_on_save = 1 " format on save
+let g:ale_fixers = {
+  \ 'javascript': ['prettier'],
+  \ 'css': ['prettier'],
+\}
 let g:ale_sign_column_always = 1 " keep gutter always open
 
 let g:clang_format#detect_style_file = 1 " detect config in .clang-format
