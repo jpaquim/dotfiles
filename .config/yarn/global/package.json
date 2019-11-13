@@ -1,19 +1,19 @@
 {
   "dependencies": {
-    "@vue/cli": "^3.0.1",
-    "create-fusion-app": "^0.0.4",
-    "create-proton-app": "^1.1.6",
-    "create-react-app": "^1.5.2",
-    "create-react-native-app": "^1.0.0",
-    "eslint": "^5.5.0",
-    "express-generator": "^4.16.0",
-    "graphql-cli": "^2.16.7",
-    "http-server": "^0.11.1",
-    "javascript-typescript-langserver": "^2.11.1",
-    "jscodeshift": "^0.5.1",
-    "netlify-cli": "^1.2.3",
-    "prisma": "^1.15.3",
-    "serve": "^10.0.0",
-    "typescript": "^3.0.3"
+    "@jpwilliams/gitree": "^1.3.1",
+    "@vue/cli": "^4.0.5",
+    "bs-platform": "^5.2.1",
+    "eslint": "^6.6.0",
+    "javascript-typescript-langserver": "^2.11.3",
+    "jscodeshift": "^0.6.4",
+    "n": "^6.1.1",
+    "netlify-cli": "^2.21.0",
+    "nodemon": "^1.19.4",
+    "now": "^16.5.2",
+    "npm-check": "^5.9.0",
+    "pm2": "^4.1.2",
+    "serve": "^11.2.0",
+    "sirv-cli": "^0.4.5",
+    "typescript": "^3.7.2"
   }
 }
