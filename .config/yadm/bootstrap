@@ -45,3 +45,6 @@ fi
 
 echo "Removing README file"
 rm -f ~/README.md
+
+echo "Creating yadm repo.git -> .git symlink"
+ln -s ~/.config/yadm/repo.git ~/.git
