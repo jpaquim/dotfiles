@@ -12,6 +12,7 @@ set -gx PATH /Users/jpaquim/.pub-cache/bin $PATH
 
 # Aliases
 alias g "git"
+alias update "brew update; and brew upgrade; and brew cleanup"
 
 # jq aliases to get package.json fields
 alias deps "jq .dependencies package.json | jq keys[]"
