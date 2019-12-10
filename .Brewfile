@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "beeftornado/rmtree"
 
+brew "bat"
 brew "djvu2pdf"
 brew "fd"
 brew "fish"
