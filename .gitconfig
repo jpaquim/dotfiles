@@ -15,6 +15,9 @@
 	civ = commit -vv
 	co = checkout
 	cob = checkout -b
+	hash = rev-parse @
+	hashs = rev-parse --short @
+	l = log --oneline
 	pullr = pull --rebase origin master
 	pushbr = push --no-verify -u
 	pushf = push --force-with-lease
