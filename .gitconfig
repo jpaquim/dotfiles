@@ -18,6 +18,7 @@
 	hash = rev-parse @
 	hashs = rev-parse --short @
 	l = log --oneline
+	lg = log --oneline --graph
 	pullr = pull --rebase origin master
 	pushbr = push --no-verify -u
 	pushf = push --force-with-lease
