@@ -15,6 +15,7 @@
 	civ = commit -vv
 	co = checkout
 	cob = checkout -b
+	diffs = diff --staged
 	hash = rev-parse @
 	hashs = rev-parse --short @
 	l = log --oneline
