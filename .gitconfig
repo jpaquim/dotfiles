@@ -30,7 +30,7 @@
 	rbc = rebase --continue
 	rba = rebase --abort
 	st = status
-	temp = commit -m temp
+	temp = commit -nm temp
 [gpg]
 	program = /usr/local/bin/gpg
 [hub]
