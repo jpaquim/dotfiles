@@ -35,6 +35,7 @@ brew "yadm"
 brew "yarn"
 
 cask "appcleaner"
+cask "boostnote"
 cask "dash"
 cask "discord"
 cask "docker"
