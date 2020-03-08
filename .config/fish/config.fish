@@ -19,3 +19,5 @@ alias deps "jq .dependencies package.json | jq keys[]"
 alias depsv "jq .dependencies package.json"
 alias scripts "jq .scripts package.json"
 alias version "jq .version package.json"
+
+alias cat "bat"
