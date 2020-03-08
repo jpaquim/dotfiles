@@ -6,6 +6,7 @@ tap "beeftornado/rmtree"
 
 brew "bat"
 brew "binaryen"
+brew "clojure/tools/clojure"
 brew "deno"
 brew "djvu2pdf"
 brew "fd"
