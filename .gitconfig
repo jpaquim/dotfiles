@@ -13,6 +13,7 @@
 	ci = commit
 	cia = commit -avv
 	civ = commit -vv
+	cl = clone --depth 1
 	co = checkout
 	cob = checkout -b
 	diffs = diff --staged
