@@ -32,6 +32,7 @@ Plug 'w0rp/ale' " asynchronous lint engine
 Plug 'autozimu/languageclient-neovim',
   \ { 'branch': 'next', 'do': 'bash install.sh' } " support for language servers
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'sheerun/vim-polyglot' " language pack
 " Note: before adding a language plugin, check if vim-polyglot doesn't already
 " include support for it
@@ -118,12 +119,12 @@ map <Space> <Leader>
 map <Space><Space> <Leader><Leader>
 
 " edit, save, quit, and save & quit
-nnoremap <Leader>e :e 
+nnoremap <Leader>e :e
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>Q :q!<CR>
-nnoremap <Leader>E :e! 
+nnoremap <Leader>E :e!
 
 " append , and ; to to the end of the line
 nnoremap <Leader>, m`A,<Esc>``
