@@ -10,6 +10,7 @@
 	br = branch
 	brd = branch -d
 	brD = branch -D
+	brname = rev-parse --abbrev-ref @
 	ci = commit
 	cia = commit -avv
 	civ = commit -vv
@@ -21,6 +22,7 @@
 	hashs = rev-parse --short @
 	l = log --oneline
 	lg = log --oneline --graph
+	pullf = !git fetch && git reset --hard @{u}
 	pullr = pull --rebase origin master
 	pushbr = push --no-verify -u
 	pushf = push --force-with-lease
