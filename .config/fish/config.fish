@@ -10,6 +10,9 @@ set -gx PATH /Applications/Postgres.app/Contents/Versions/latest/bin $PATH
 # Dart packages
 set -gx PATH $HOME/.pub-cache/bin $PATH
 
+# Rust packages
+set -gx PATH $HOME/.cargo/bin $PATH
+
 # Aliases
 alias g "git"
 alias update "brew update; and brew upgrade; and brew cleanup"
