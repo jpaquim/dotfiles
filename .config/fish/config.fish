@@ -20,6 +20,8 @@ alias update "brew update; and brew upgrade; and brew cleanup"
 # jq aliases to get package.json fields
 alias deps "jq .dependencies package.json | jq keys[]"
 alias depsv "jq .dependencies package.json"
+alias devdeps "jq .devDependencies package.json | jq keys[]"
+alias devdepsv "jq .devDependencies package.json"
 alias scripts "jq .scripts package.json"
 alias version "jq .version package.json"
 
