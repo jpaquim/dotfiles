@@ -8,7 +8,7 @@ set -gx LC_ALL en_US.UTF-8
 set -gx PATH /Applications/Postgres.app/Contents/Versions/latest/bin $PATH
 
 # Dart packages
-set -gx PATH /Users/jpaquim/.pub-cache/bin $PATH
+set -gx PATH $HOME/.pub-cache/bin $PATH
 
 # Aliases
 alias g "git"
