@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles, managed with [yadm](https://thelocehiliosan.github.io/yadm/).
+My dotfiles, managed with [yadm](https://yadm.io/).
 
 # Installation
 
