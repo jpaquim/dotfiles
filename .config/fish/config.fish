@@ -15,7 +15,8 @@ set -gx PATH $HOME/.cargo/bin $PATH
 
 # Aliases
 alias g "git"
-alias update "brew update; and brew upgrade; and brew cleanup"
+alias update "brew update && brew upgrade && brew cleanup"
+alias update-all "update && rustup update"
 
 # jq aliases to get package.json fields
 alias deps "jq .dependencies package.json | jq keys[]"
