@@ -212,6 +212,8 @@ let g:closetag_xhtml_filenames = '*.js,*.jsx'
 
 let g:deoplete#enable_at_startup = 1 " enable autocomplete
 
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 let g:javascript_plugin_jsdoc = 1 " enable jsdoc syntax support
 
 let g:jsx_ext_required = 0 " enable jsx syntax support in js files
