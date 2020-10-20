@@ -13,6 +13,9 @@ set -gx PATH $HOME/.pub-cache/bin $PATH
 # Rust packages
 set -gx PATH $HOME/.cargo/bin $PATH
 
+# Cache Rust compiler outputs with sccache
+set -gx RUSTC_WRAPPER /usr/local/bin/sccache
+
 # Aliases
 alias g "git"
 alias update "brew update && brew upgrade && brew cleanup"
