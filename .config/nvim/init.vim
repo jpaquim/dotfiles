@@ -39,6 +39,7 @@ Plug 'sheerun/vim-polyglot' " language pack
 Plug 'mhinz/vim-mix-format' " Elixir formatter support
 Plug 'jparise/vim-graphql' " graphql support
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " TypeScript support
+Plug 'ziglang/zig.vim'
 
 " Plug 'ctrlpvim/ctrlp.vim' " fuzzy find
 " Plug 'honza/vim-snippets' " snippets collection
