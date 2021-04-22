@@ -36,6 +36,8 @@
 	rbi = rebase -i
 	rbc = rebase --continue
 	rba = rebase --abort
+	sm = submodule
+	smadd = submodule add --depth 1
 	st = status
 	temp = commit -nm temp
 [gpg]
