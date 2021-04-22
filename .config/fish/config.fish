@@ -4,20 +4,22 @@ set fish_greeting
 # Override system locale for consistency
 set -gx LC_ALL en_US.UTF-8
 
+# Override system locale for consistency
+set -gx EDITOR nvim
+
 # PostgreSQL
-set -gx PATH /Applications/Postgres.app/Contents/Versions/latest/bin $PATH
+fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Dart packages
-set -gx PATH $HOME/.pub-cache/bin $PATH
+fish_add_path $HOME/.pub-cache/bin
 
 # Rust packages
-set -gx PATH $HOME/.cargo/bin $PATH
+fish_add_path $HOME/.cargo/bin
 
-# Cache Rust compiler outputs with sccache
 set -gx RUSTC_WRAPPER /usr/local/bin/sccache
 
 # Aliases
-alias g "git"
+alias g git
 alias update "brew update && brew upgrade && brew cleanup"
 alias update-all "update && rustup update"
 
@@ -29,4 +31,4 @@ alias devdepsv "jq .devDependencies package.json"
 alias scripts "jq .scripts package.json"
 alias version "jq .version package.json"
 
-alias cat "bat"
+alias cat bat
