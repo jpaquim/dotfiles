@@ -63,6 +63,8 @@ set wrap linebreak nolist " soft wrap
 set colorcolumn=81 " highlight 81st column
 " let &colorcolumn=join(range(81,500),",") " highlight columns after 80
 
+set signcolumn=number " show sign column in line number column
+
 
 """ Tabs """
 set expandtab " replace tab with spaces
