@@ -13,6 +13,9 @@ fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
 # Dart packages
 fish_add_path $HOME/.pub-cache/bin
 
+# Java OpenJDK keg-only
+fish_add_path /usr/local/opt/openjdk/bin
+
 # Rust packages
 fish_add_path $HOME/.cargo/bin
 
