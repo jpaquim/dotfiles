@@ -1,0 +1,25 @@
+{
+	"dependencies": {
+		"@jpwilliams/gitree": "^1.5.1",
+		"@microsoft/rush": "^5.50.0",
+		"@vue/cli": "^4.5.13",
+		"@vue/cli-service-global": "^4.5.13",
+		"bs-platform": "^9.0.2",
+		"eslint": "^7.32.0",
+		"javascript-typescript-langserver": "^2.11.3",
+		"jscodeshift": "^0.13.0",
+		"n": "^7.3.1",
+		"ndb": "^1.1.5",
+		"neovim": "^4.10.0",
+		"netlify-cli": "^6.0.8",
+		"nodemon": "^2.0.12",
+		"npm-check": "^5.9.2",
+		"parcel": "^2.0.0-rc.0",
+		"pm2": "^5.1.0",
+		"pnpm": "^6.11.5",
+		"serve": "^12.0.0",
+		"sirv-cli": "^1.0.12",
+		"typescript": "^4.3.5",
+		"vercel": "^23.1.0"
+	}
+}
