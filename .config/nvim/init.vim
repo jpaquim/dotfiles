@@ -52,7 +52,7 @@ call plug#end()
 
 """ Appearance """
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 set number " show line numbers
 set relativenumber " relative line numbers
 set cursorline " highlight current line
@@ -63,7 +63,7 @@ set wrap linebreak nolist " soft wrap
 set colorcolumn=81 " highlight 81st column
 " let &colorcolumn=join(range(81,500),",") " highlight columns after 80
 
-set signcolumn=number " show sign column in line number column
+" set signcolumn=number " show sign column in line number column
 
 
 """ Tabs """
@@ -93,7 +93,7 @@ set mouse=a " enable mouse support in all modes
 
 set undofile " remember undo history across editing sessions
 
-set clipboard=unnamed " copy to macOS clipboard
+" set clipboard=unnamed " copy to macOS clipboard
 
 set timeoutlen=500 " timeout for key combinations
 
@@ -215,7 +215,7 @@ let g:closetag_xhtml_filenames = '*.js,*.jsx'
 
 let g:deoplete#enable_at_startup = 1 " enable autocomplete
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:python3_host_prog = '/usr/local/bin/python3'
 
 let g:javascript_plugin_jsdoc = 1 " enable jsdoc syntax support
 

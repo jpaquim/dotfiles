@@ -44,8 +44,6 @@
 	program = /usr/local/bin/gpg
 [hub]
 	protocol = https
-[credential]
-	helper = osxkeychain
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

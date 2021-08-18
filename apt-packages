@@ -1,0 +1,14 @@
+bat
+build-essential
+curl
+fish
+git
+neovim
+nodejs
+npm
+ripgrep
+snapd
+software-properties-common
+tmux
+qemu
+qemu-kvm

@@ -7,6 +7,15 @@ set -gx LC_ALL en_US.UTF-8
 # Override system locale for consistency
 set -gx EDITOR nvim
 
+# local binaries
+fish_add_path $HOME/bin
+
+# ccache
+fish_add_path /usr/lib/ccache/bin
+
+# asdf
+source /opt/asdf-vm/asdf.fish
+
 # PostgreSQL
 fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
 
@@ -19,7 +28,7 @@ fish_add_path /usr/local/opt/openjdk/bin
 # Rust packages
 fish_add_path $HOME/.cargo/bin
 
-set -gx RUSTC_WRAPPER /usr/local/bin/sccache
+set -gx RUSTC_WRAPPER (which sccache)
 
 # Aliases
 alias g git
@@ -34,4 +43,15 @@ alias devdepsv "jq .devDependencies package.json"
 alias scripts "jq .scripts package.json"
 alias version "jq .version package.json"
 
-alias cat bat
+if command -q bat
+  alias cat bat
+else if command -q batcat
+  alias cat batcat
+end
+
+if ! command -q pbcopy
+  alias pbcopy "xsel -ib"
+end
+if ! command -q pbpaste
+  alias pbpaste "xsel -ob"
+end
