@@ -32,9 +32,51 @@ if [ "$system_type" = "Darwin" ]; then
 #   fi
 fi
 
+if [ "$system_type" = "Linux" ]; then
+  if command -v apt >/dev/null; then
+    # apt packages
+    xargs -a apt-packages sudo apt install -y
+    # snap packages
+    xargs -a snap-packages sudo snap install
+    # xargs -a snap-classic-packages sudo snap install --classic
+    # latest fish
+    sudo apt-add-repository ppa:fish-shell/release-3
+    sudo apt install -y fish
+    # latest nodejs
+    curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+    sudo apt install -y nodejs
+    # latest docker
+    sudo apt-get install \
+      apt-transport-https \
+      ca-certificates \
+      curl \
+      gnupg \
+      lsb-release
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    VERSION="focal"
+    echo \
+      "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+      $VERSION stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt update
+    sudo apt install docker-ce docker-ce-cli containerd.io
+  fi
+  if command -v pacman >/dev/null; then
+    sudo pacman -S --needed < pacman-packages
+  # sudo pacman -Syu ebtables dnsmasq
+  # sudo systemctl restart libvirtd#
+  fi
+fi
+
 if command -v vim >/dev/null 2>&1; then
   echo "Bootstrapping vim"
   vim +PlugUpdate +PlugClean! +PlugUpdate +qall
+fi
+
+if command -v nvim >/dev/null 2>&1; then
+  echo "Bootstrapping neovim"
+  # git clone https://github.com/NvChad/NvChad ~/.config/nvim
+  # nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+  # nvim +TSInstall fish
 fi
 
 if [ ! -d ~/.tmux/plugins ]; then
@@ -43,8 +85,42 @@ if [ ! -d ~/.tmux/plugins ]; then
   tmux new '~/.tmux/plugins/tpm/bin/install_plugins'
 fi
 
+if command -v npm >/dev/null; then
+  sudo npm i -g pnpm
+  pnpm config set global-dir $HOME/.config/pnpm
+  # push $HOME/.config/pnpm/5
+  # deps | xargs sudo pnpm i -g
+fi
+
 echo "Removing README file"
 rm -f ~/README.md
 
 echo "Creating yadm repo.git -> .git symlink"
-ln -s ~/.config/yadm/repo.git ~/.git
+ln -sf ~/.local/share/yadm/repo.git ~/.git
+
+### Manual steps
+# BIOS
+# - Disable secure boot
+# - Set sleep states from Windows 10 to Linux (S3)
+#
+# Windows
+# - Set system clock to UTC (.reg)
+#
+# Arch Linux
+# - Fingerprint support (fprintd):
+#   /etc/pam.d/system-local-login
+#   /etc/pam.d/login
+#   /etc/pam.d/logout
+#   /etc/pam.d/sudo
+#   /etc/pam.d/su
+#   /etc/pam.d/kde
+#   /etc/pam.d/sddm
+# - Create swapfile on btrfs subvolume - https://www.jwillikers.com/btrfs-swapfile
+# - Set swappiness to 10
+#   /etc/sysctl.d/99-swappiness.conf
+# - Mask failing backlight service, using systemd-backlight@backlight:amdgpu_bl0.service
+#   sudo systemctl mask systemd-backlight@backlight:acpi_video0.service
+# - Hibernation:
+#   add to /etc/mkinicpio.conf HOOKS: resume
+#   add to /etc/default/grub GRUB_CMDLINE_LINUX_DEFAULT
+#     resume=UUID=00745393-acdd-4117-b64e-561a819e1d62 resume_offset=4199680
