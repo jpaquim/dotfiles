@@ -4,32 +4,23 @@ set fish_greeting
 # Override system locale for consistency
 set -gx LC_ALL en_US.UTF-8
 
-# Override system locale for consistency
+# Set system-wide editor to neovim
 set -gx EDITOR nvim
 
 # local binaries
 fish_add_path $HOME/bin
 
 # ccache
-fish_add_path /usr/lib/ccache/bin
-
-# asdf
-if command -q asdf
-  source /opt/asdf-vm/asdf.fish
+if command -q ccache
+  fish_add_path /usr/lib/ccache/bin
 end
 
-# PostgreSQL
-fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
-
-# Dart packages
-fish_add_path $HOME/.pub-cache/bin
-
-# Java OpenJDK keg-only
-fish_add_path /usr/local/opt/openjdk/bin
-
 # Rust packages
-fish_add_path $HOME/.cargo/bin
+if command -q cargo
+  fish_add_path $HOME/.cargo/bin
+end
 
+# Use sccache as rustc wrapper if available
 if command -q sccache
   set -gx RUSTC_WRAPPER (which sccache)
 end
@@ -40,37 +31,49 @@ if command -q yay
   alias update "yay"
 else if command -q pacman
   alias update "sudo pacman -Syu"
+else if command -q apt
+  alias update "sudo apt update && sudo apt upgrade"
 else if command -q brew
   alias update "brew update && brew upgrade && brew cleanup"
 end
 # alias update-all "update && rustup update"
 
 # jq aliases to get package.json fields
-alias deps "jq .dependencies package.json | jq keys[]"
-alias depsv "jq .dependencies package.json"
-alias devdeps "jq .devDependencies package.json | jq keys[]"
-alias devdepsv "jq .devDependencies package.json"
-alias scripts "jq .scripts package.json"
-alias version "jq .version package.json"
+if command -q jq
+  alias deps "jq .dependencies package.json | jq keys[]"
+  alias depsv "jq .dependencies package.json"
+  alias devdeps "jq .devDependencies package.json | jq keys[]"
+  alias devdepsv "jq .devDependencies package.json"
+  alias scripts "jq .scripts package.json"
+  alias version "jq .version package.json"
+end
 
+# use bat instead of cat if available
 if command -q bat
   alias cat bat
 else if command -q batcat
   alias cat batcat
 end
 
+# macOS-like aliases for clipboard access
 if ! command -q pbcopy
-  alias pbcopy "xsel -ib"
-end
+  if test -n $WAYLAND_DISPLAY
+    alias pbcopy "wl-copy"
+  end
+    alias pbcopy "xsel -ib"
+  end
 if ! command -q pbpaste
-  alias pbpaste "xsel -ob"
+  if test -n $WAYLAND_DISPLAY
+    alias pbpaste "wl-paste"
+  else
+    alias pbpaste "xsel -ob"
+  end
 end
 
-if test -n $WAYLAND_DISPLAY
-  alias code "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
-  alias chrome "google-chrome-unstable --incognito --enable-features=UseOzonePlatform --ozone-platform=wayland"
-  # --enable-vulkan --enable-unsafe-webgpu
-end
-
+# connect to a VM on localhost:8022
 alias vm 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q -p 8022 localhost'
 # alias vm 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=QUIET -p 8022 localhost'
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
