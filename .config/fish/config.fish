@@ -56,18 +56,15 @@ else if command -q batcat
 end
 
 # macOS-like aliases for clipboard access
-if ! command -q pbcopy
-  if test -n $WAYLAND_DISPLAY
-    alias pbcopy "wl-copy"
-  end
-    alias pbcopy "xsel -ib"
-  end
-if ! command -q pbpaste
-  if test -n $WAYLAND_DISPLAY
-    alias pbpaste "wl-paste"
-  else
-    alias pbpaste "xsel -ob"
-  end
+if command -q pbcopy
+  alias clcopy "pbcopy"
+  alias clpaste "pbpaste"
+else if test -n $WAYLAND_DISPLAY
+  alias clcopy "wl-copy"
+  alias clpaste "wl-paste"
+else
+  alias clcopy "xsel -ib"
+  alias clpaste "xsel -ob"
 end
 
 # connect to a VM on localhost:8022
