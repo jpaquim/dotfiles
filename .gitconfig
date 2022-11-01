@@ -21,13 +21,16 @@
 	cl = clone --depth 1
 	co = checkout
 	cob = checkout -b
+	com = "!f(){ git checkout $(git main) $@; }; f"
 	diffs = diff --staged
 	hash = rev-parse @
 	hashs = rev-parse --short @
 	l = log --oneline
 	lg = log --oneline --graph
+	main = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 	pullf = !git fetch && git reset --hard @{u}
 	pullr = pull --rebase origin master
+	pullrm = "!f(){ git pull --rebase origin $(git main); }; f"
 	pushbr = push --no-verify -u
 	pushf = push --force-with-lease
 	pushfn = push --force-with-lease --no-verify
