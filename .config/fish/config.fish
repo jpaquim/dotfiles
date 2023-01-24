@@ -10,6 +10,10 @@ set -gx EDITOR nvim
 # local binaries
 fish_add_path $HOME/bin
 
+# pnpm
+set -gx PNPM_HOME $HOME/.local/share/pnpm
+fish_add_path $PNPM_HOME
+
 # ccache
 if command -q ccache
   fish_add_path /usr/lib/ccache/bin
@@ -60,6 +64,10 @@ if status is-interactive
     alias cat bat
   else if command -q batcat
     alias cat batcat
+  end
+
+  if test -n $WAYLAND_DISPLAY
+    alias code "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
   end
 
   # jq aliases to get package.json fields
